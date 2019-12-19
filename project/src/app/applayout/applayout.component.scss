@@ -1,0 +1,55 @@
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.btn-province {
+  color: #c49d45;
+  background-color: #ffffff;
+  border-color: #c49d45;
+}
+
+.btn-item {
+  color: #fff;
+  background-color: #c49d45;
+  border-color: #c49d45;
+}
+
+.btn-province:hover {
+  color: #c49d45;
+}
+
+.btn-item:hover {
+  color: #ffffff;
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  touch-action: manipulation;
+}
+
+.slider{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slides{
+  scroll-snap-align: start;
+}

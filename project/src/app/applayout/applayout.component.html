@@ -1,0 +1,60 @@
+<div class="slider">
+    <ngb-carousel>
+        <ng-template ngbSlide>
+            <div class="slides">
+                <div class="picsum-img-wrapper">
+                    <img src="./assets/main_newyear.jpg" alt="Random first slide" style="width: 100%;">
+                </div>
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="slides">
+                <div class="picsum-img-wrapper">
+                    <img src="./assets/main_header.jpg" alt="Random Second slide" style="width: 100%;">
+                </div>
+            </div>
+            <div class="carousel-caption" style="text-align: start;">
+                <div style="text-align: start; font-size: 40px;">A Farm Mart</div>
+                <div style="text-align: start; font-size: 15px;">A Farm Mart เกิดจาก
+                    จุดมุ่งหมายที่ต้องการยอกระดับเกษตรกร</div>
+                <div style="text-align: start; font-size: 15px;">โดยเพิ่มช่องทางการซื้อ-ขายสินค้าเกษตร
+                    ปัจจัยการผลิตที่ผ่านการ</div>
+                <div style="text-align: start; font-size: 15px;">คัดเลือกและรับรองคุณภาพ</div>
+                <div style="text-align: start; font-size: 15px;">การผนึกกำลังของเกษตรกรไทย ให้เกษตรกรซื้อสินค้าได้ในราคา
+                </div>
+                <div style="text-align: start; font-size: 15px;">ถูกกว่าท้องตลาด</div>
+                <div style="text-align: start; font-size: 15px;">เพื่อลดต้นทุนการผลิต ลดค่าครองชีพแก่สมาชิกในชุมชน</div>
+                <button class="btn btn-province">ของดี 77 จังหวัด</button>
+                <button class="btn btn-item" style="margin-left: 20px;">สินค้าตามภูมิภาค</button>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+    <div style="text-align: center;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+<div class="continer">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 style="margin-top: 30px; margin-bottom: 30px; margin-left: 140px;">สินค้ายอดนิยม</h4>
+        </div>
+    </div>
+    <div class="row" style="margin-right: 150px; margin-left: 150px;">
+        <div class="col-4 col-md-3 col-sm-4 col-lg-3 d-flex flex-column mb-4" *ngFor="let data of items">
+            <div class="card" style="width: auto; height: auto;">
+                <div class="text-center" style="margin-top: 10px;">
+                    <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..." width="60px"
+                        height="60px" style="width: 100px; height: 100px;">
+                </div>
+                <div class="card-body">
+                    <div style="width: 10rem;"><span class="card-text"
+                            style="font-size: 12px; color: grey;">{{ data.category }}</span></div>
+                    <div style="width: 10rem;"><span class="card-text">{{ data.name }}</span></div>
+                    <div style="width: 10rem; "><span class="card-text"> THB <span
+                                style="color: green;">{{ data.price }} </span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
