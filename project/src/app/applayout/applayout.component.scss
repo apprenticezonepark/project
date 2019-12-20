@@ -23,3 +23,10 @@
   width: 140px; 
   overflow-y: auto;
 }
+.carousel-indicators{
+  z-index: 1 !important;
+}
+
+div.relative {
+  position: relative;
+}
