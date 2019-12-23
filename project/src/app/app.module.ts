@@ -7,11 +7,13 @@ import { ApplayoutComponent } from './applayout/applayout.component';
 import { NgbModule, NgbAlertModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { appservice } from './service/applayout.service';
+import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApplayoutComponent
+    ApplayoutComponent,
+    FilenotfoundComponent
   ],
   imports: [
     BrowserModule,
