@@ -32,29 +32,58 @@
     <div class="continer" style="z-index: 1; margin-top: 40px;">
         <span style="margin-left: 130px; font-size: 25px;">สินค้ายอดนิยม</span>
         <div class="row" style="margin-right: 150px; margin-left: 150px; margin-top: 40px;">
-            <div class="col-6 col-md-3 col-sm-4 col-lg-3 d-flex flex-column mb-4"
-                *ngFor="let data of slides; let i = index">
-                <div class="card" style="width: auto; height: auto; margin-bottom: 20px;"
-                    [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of data; let cardIndex = index">
+            <div class="col-6 col-md-3 col-sm-4 col-lg-3 d-flex flex-column mb-4" *ngFor="let data of itemList">
+                <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
                     <div class="text-center" style="margin-top: 10px;">
+                        <img *ngIf="data.pic != null" src="{{config}}{{data.pic.content_path}}" class="rounded"
+                            alt="..." width="60px" height="60px"
+                            onerror="this.onerror=null;this.src='/assets/muanjai.png'">
                         <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..." width="60px"
-                            height="60px" style="width: 100%; height: 100%;">
+                            height="60px">
                     </div>
                     <div class="card-body">
                         <div style="width: 10rem;"><span class="card-text"
-                                style="font-size: 12px; color: grey;">{{ card.category }}</span></div>
-                        <div style="width: 10rem;"><span class="card-text">{{ card.name }}</span></div>
+                                style="font-size: 12px; color: grey;">{{ data.barcode }}</span></div>
+                        <div style="width: 10rem;"><span class="card-text">{{ data.item_name }}</span></div>
                         <div style="width: 10rem; "><span class="card-text"> THB <span
-                                    style="color: green;">{{ card.price }} </span></span></div>
+                                    style="color: green;">{{ data.price }} </span></span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="d-flex justify-content-center">
-        <ngb-pagination (pageChange)="pageitem($event)" [collectionSize]="pageItem" [(page)]="page"
-            aria-label="Default pagination"></ngb-pagination>
-    </div> -->
+        <div class="d-flex justify-content-center" style="z-index: 1;">
+            <ngb-pagination (pageChange)="pageitem($event)" [collectionSize]="pageItem" [(page)]="page"
+                aria-label="Default pagination"></ngb-pagination>
+        </div>
     </div>
+    <div class="continer" style="z-index: 1; margin-top: 40px;">
+        <span style="margin-left: 130px; font-size: 25px;">สินค้าโปรโมชั่นต้อนรับปีใหม่</span>
+        <div class="row" style="margin-right: 150px; margin-left: 150px; margin-top: 40px;">
+            <div class="col-6 col-md-3 col-sm-4 col-lg-3 d-flex flex-column mb-4" *ngFor="let data of itemList">
+                <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
+                    <div class="text-center" style="margin-top: 10px;">
+                        <img *ngIf="data.pic != null" src="{{config}}{{data.pic.content_path}}" class="rounded"
+                            alt="..." width="60px" height="60px"
+                            onerror="this.onerror=null;this.src='/assets/muanjai.png'">
+                        <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..." width="60px"
+                            height="60px">
+                    </div>
+                    <div class="card-body">
+                        <div style="width: 10rem;"><span class="card-text"
+                                style="font-size: 12px; color: grey;">{{ data.barcode }}</span></div>
+                        <div style="width: 10rem;"><span class="card-text">{{ data.item_name }}</span></div>
+                        <div style="width: 10rem; "><span class="card-text"> THB <span
+                                    style="color: green;">{{ data.price }} </span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center" style="z-index: 1;">
+            <ngb-pagination (pageChange)="pageitem($event)" [collectionSize]="pageItem" [(page)]="page"
+                aria-label="Default pagination"></ngb-pagination>
+        </div>
+    </div>
+    <span style="margin-left: 130px; font-size: 25px;">สินค้าบอกเรื่องราว</span>
     <div class="container mt-5 d-flex justify-content-center">
         <div class="row">
             <div class="col-md-12">
@@ -70,6 +99,98 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="continer" style="z-index: 1; margin-top: 40px;">
+        <span style="margin-left: 130px; font-size: 25px;">สินค้าแนะนำ</span>
+        <div class="row" style="margin-right: 150px; margin-left: 150px; margin-top: 40px;">
+            <div class="col-6 col-md-3 col-sm-4 col-lg-3 d-flex flex-column mb-4" *ngFor="let data of itemList">
+                <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
+                    <div class="text-center" style="margin-top: 10px;">
+                        <img *ngIf="data.pic != null" src="{{config}}{{data.pic.content_path}}" class="rounded"
+                            alt="..." width="60px" height="60px"
+                            onerror="this.onerror=null;this.src='/assets/muanjai.png'">
+                        <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..." width="60px"
+                            height="60px">
+                    </div>
+                    <div class="card-body">
+                        <div style="width: 10rem;"><span class="card-text"
+                                style="font-size: 12px; color: grey;">{{ data.barcode }}</span></div>
+                        <div style="width: 10rem;"><span class="card-text">{{ data.item_name }}</span></div>
+                        <div style="width: 10rem; "><span class="card-text"> THB <span
+                                    style="color: green;">{{ data.price }} </span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center" style="z-index: 1;">
+            <ngb-pagination (pageChange)="pageitem($event)" [collectionSize]="pageItem" [(page)]="page"
+                aria-label="Default pagination"></ngb-pagination>
+        </div>
+    </div>
+    <div class="continer" style="z-index: 1; margin-top: 40px;">
+        <span style="margin-left: 130px; font-size: 25px;">สินค้าตามหมวดหมู่</span>
+        <div class="row" style="margin-right: 150px; margin-left: 150px; margin-top: 40px;">
+            <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
+                <img class="pic" src="./assets/muanjai.png" class="rounded" alt="..." width="100px" height="100px"
+                    style="margin-left: 200px; margin-top: 30px;">
+                <div class="row" style="margin-top: 40px; margin-left: 20px; margin-right: 20px;">
+                    <div class="col-6 col-md-6 col-sm-6 col-lg-6 d-flex flex-column mb-4" *ngFor="let data of item">
+                        <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
+                            <div class="text-center" style="margin-top: 10px;">
+                                <img *ngIf="data.pic != null" src="{{config}}{{data.pic.content_path}}" class="rounded"
+                                    alt="..." width="60px" height="60px"
+                                    onerror="this.onerror=null;this.src='/assets/muanjai.png'">
+                                <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..."
+                                    width="60px" height="60px">
+                            </div>
+                            <div class="card-body">
+                                <div style="width: 10rem;"><span class="card-text"
+                                        style="font-size: 12px; color: grey;">{{ data.barcode }}</span></div>
+                                <div style="width: 10rem;"><span class="card-text">{{ data.item_name }}</span></div>
+                                <div style="width: 10rem; "><span class="card-text"> THB <span
+                                            style="color: green;">{{ data.price }} </span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center" style="z-index: 1;">
+                    <ngb-pagination (pageChange)="page_item($event)" [collectionSize]="page_Item" [(page)]="page"
+                        aria-label="Default pagination"></ngb-pagination>
+                </div>
+                <button class="btn btn-outline"
+                    style="margin-left: 150px; margin-right: 150px; margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
+            </div>
+            <div class="card" style="width: auto; height: auto; margin-bottom: 20px; margin-left: 20px;">
+                <img class="pic" src="./assets/muanjai.png" class="rounded" alt="..." width="100px" height="100px"
+                    style="margin-left: 200px; margin-top: 30px;">
+                <div class="row" style="margin-top: 40px; margin-left: 20px; margin-right: 20px;">
+                    <div class="col-6 col-md-6 col-sm-6 col-lg-6 d-flex flex-column mb-4" *ngFor="let data of item">
+                        <div class="card" style="width: auto; height: auto; margin-bottom: 20px;">
+                            <div class="text-center" style="margin-top: 10px;">
+                                <img *ngIf="data.pic != null" src="{{config}}{{data.pic.content_path}}" class="rounded"
+                                    alt="..." width="60px" height="60px"
+                                    onerror="this.onerror=null;this.src='/assets/muanjai.png'">
+                                <img *ngIf="data.pic == null" src="./assets/muanjai.png" class="rounded" alt="..."
+                                    width="60px" height="60px">
+                            </div>
+                            <div class="card-body">
+                                <div style="width: 10rem;"><span class="card-text"
+                                        style="font-size: 12px; color: grey;">{{ data.barcode }}</span></div>
+                                <div style="width: 10rem;"><span class="card-text">{{ data.item_name }}</span></div>
+                                <div style="width: 10rem; "><span class="card-text"> THB <span
+                                            style="color: green;">{{ data.price }} </span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center" style="z-index: 1;">
+                    <ngb-pagination (pageChange)="page_item($event)" [collectionSize]="page_Item" [(page)]="page"
+                        aria-label="Default pagination"></ngb-pagination>
+                </div>
+                <button class="btn btn-outline"
+                    style="margin-left: 150px; margin-right: 150px; margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
             </div>
         </div>
     </div>

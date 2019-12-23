@@ -1,5 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { appservice } from '../service/applayout.service';
 
 @Component({
   selector: 'app-applayout',
@@ -7,6 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./applayout.component.scss']
 })
 export class ApplayoutComponent implements OnInit {
+
   items = [
     {
       category: 'ผลิตภัณฑ์ชุมชน',
@@ -48,40 +51,82 @@ export class ApplayoutComponent implements OnInit {
       name: 'กล้วยน้ำว้า',
       price: '80'
     },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'ตะกร้าไม้ไผ่',
+      price: '329'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'เสื้อมัดย้อม',
+      price: '200'
+    },
   ]
+  itemList: any;
+  item: any;
 
-  slides: any = [[]];
+  pageItem: any;
+  page_Item: any;
+  page_i: any;
+  page: any;
   config: any = "http://10.0.130.101:8080/dev/trainee/content/";
-
   url: SafeResourceUrl;
   video: any = [
-    "B6TvrxUml9E",
     "tgbNymZ7vqY",
     "T2u0qBkUMQg",
     "1DnPn-bZGO8",
-    "QMB3gze_A0k"
+    "QMB3gze_A0k",
+    "B6TvrxUml9E"
   ];
   vdo_id: any;
 
-  constructor(private dom: DomSanitizer) {
+  constructor(private dom: DomSanitizer, private http: HttpClient, private appservice: appservice) {
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
+    this.page = 1;
+    // this.page_i = 1;
   }
 
   ngOnInit() {
-    this.slides = this.slideitem(this.items, 2);
-  }
 
-  slideitem(arr, itemsize) {
-    let a = [];
-    console.log(a);
-    for (let i = 0, len = arr.length; i < len; i += itemsize) {
-      a.push(arr.slice(i, i + itemsize));
-    }
-    return a;
+    this.appservice.getitemall()
+      .then((data: any) => {
+        this.itemList = data.Data.list_item;
+        this.pageItem = data.Data.count_item;
+      })
+      .catch(error => {
+
+      })
+
+      this.appservice.getitemall2()
+      .then((data: any) => {
+        this.item = data.Data.list_item;
+        this.page_Item = data.Data.count_item;
+      })
+      .catch(error => {
+
+      })
   }
 
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
+  }
+
+  pageitem(page_item){
+    console.log(page_item);
+    this.appservice.getpage(page_item)
+      .then((data: any) => {
+        this.itemList = data.Data.list_item;
+        this.pageItem = data.Data.count_item;
+      })
+  }
+
+  page_item(pageitem){
+    console.log(pageitem);
+    this.appservice.getpage2(pageitem)
+      .then((data: any) => {
+        this.item = data.Data.list_item;
+        this.page_Item = data.Data.count_item;
+      })
   }
 }
