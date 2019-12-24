@@ -3,12 +3,29 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { appservice } from '../service/applayout.service';
 
+declare var $;
+
 @Component({
   selector: 'app-applayout',
   templateUrl: './applayout.component.html',
   styleUrls: ['./applayout.component.scss']
 })
 export class ApplayoutComponent implements OnInit {
+
+  title = 'ngSlick';
+  // slides = [
+  //   {img: "../assets/main_newyear.jpg"},
+  //   {img: "../assets/main_header.jpg"}
+  // ];
+  slideConfig = {
+    autoplay: 3000,
+    "slidesToShow": 1, 
+    "slidesToScroll": 1,
+    "nextArrow":"<div class='nav-btn next-slide'></div>",
+    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    "dots":true,
+    "infinite": false
+  };
 
   items = [
     {
@@ -62,6 +79,14 @@ export class ApplayoutComponent implements OnInit {
       price: '200'
     },
   ]
+  itemsConfig = {
+    "slidesToShow": 4, 
+    "slidesToScroll": 4,
+    "nextArrow":"<div class='nav-btn next-slide'></div>",
+    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    "dots":true,
+    "infinite": false
+  }
   itemList: any;
   item: any;
 
@@ -128,5 +153,21 @@ export class ApplayoutComponent implements OnInit {
         this.item = data.Data.list_item;
         this.page_Item = data.Data.count_item;
       })
+  }
+
+  slickInit(e) {
+    // console.log('slick initialized');
+  }
+  
+  breakpoint(e) {
+    // console.log('breakpoint');
+  }
+  
+  afterChange(e) {
+    // console.log('afterChange');
+  }
+  
+  beforeChange(e) {
+    // console.log('beforeChange');
   }
 }

@@ -1,15 +1,13 @@
 <div style="width: 100%;">
     <div style="z-index: 1;">
-        <ngb-carousel style="z-index: 1;">
-            <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                    <img src="./assets/main_newyear.jpg" alt="Random first slide" style="width: 100%;">
-                </div>
-            </ng-template>
-            <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                    <img src="./assets/main_header.jpg" alt="Random Second slide" style="width: 100%;">
-                </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+            (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem class="slide">
+                <img src="./assets/main_newyear.jpg" alt="" width="100%">
+            </div>
+            <div ngxSlickItem class="slide">
+                <img src="./assets/main_header.jpg" alt="" width="100%">
                 <div class="carousel-caption" style="text-align: start; z-index: 1;">
                     <div style="text-align: start; font-size: 40px;">A Farm Mart</div>
                     <div style="text-align: start; font-size: 15px;">A Farm Mart เกิดจาก
@@ -26,8 +24,8 @@
                     <button class="btn btn-province">ของดี 77 จังหวัด</button>
                     <button class="btn btn-item" style="margin-left: 20px;">สินค้าตามภูมิภาค</button>
                 </div>
-            </ng-template>
-        </ngb-carousel>
+            </div>
+        </ngx-slick-carousel>
     </div>
     <div class="continer" style="z-index: 1; margin-top: 40px;">
         <span style="margin-left: 130px; font-size: 25px;">สินค้ายอดนิยม</span>
@@ -194,4 +192,6 @@
             </div>
         </div>
     </div>
+
+
 </div>
