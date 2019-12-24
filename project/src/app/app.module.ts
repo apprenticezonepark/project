@@ -8,6 +8,7 @@ import { NgbModule, NgbAlertModule, NgbPaginationModule } from '@ng-bootstrap/ng
 import { HttpClientModule } from '@angular/common/http';
 import { appservice } from './service/applayout.service';
 import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
     NgbModule,
     NgbAlertModule,
     NgbPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    SlickCarouselModule
   ],
   providers: [appservice],
   bootstrap: [AppComponent]
