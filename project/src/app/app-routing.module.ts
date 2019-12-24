@@ -1,18 +1,23 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ApplayoutComponent } from './applayout/applayout.component';
-import { AppComponent } from './app.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ApplayoutComponent } from "./applayout/applayout.component";
+import { AppComponent } from "./app.component";
+import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 
 
 const routes: Routes = [
   {
-    path:'',
-    children : [
+    path: "",
+    children: [
       {
-        path:'home',
+        path: "",
         component: ApplayoutComponent
       }
     ]
+  },
+  {
+    path: "**",
+    component: FilenotfoundComponent
   }
 ];
 
@@ -21,4 +26,4 @@ const routes: Routes = [
   declarations: [],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
