@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filenotfound',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilenotfoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  pagehome() {
+    this.router.navigate([""]);
+  }
+
 
 }
