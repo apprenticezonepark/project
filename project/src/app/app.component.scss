@@ -1,11 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
+// .scrollbar_st {
+//   overflow: scroll;
+//   overflow-x: hidden;
+// }
+
+// ::-webkit-scrollbar {
+//   width: 8px;
+//   height: 8px;
+//   background-color: #ddd;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background-color: rgb(92, 92, 92);
+// }
+
+
+
 .c_top {
   background-color: rgb(62, 218, 62);
   color: white;
 }
 
 .box_menu {
-  z-index: 2;
+  z-index: 100;
   position: fixed;
   width: 100%;
   background-color: white;
@@ -61,7 +77,7 @@
   span {
     font-size: 1rem;
     color: rgb(110, 110, 110);
-    min-width: fit-content;
+    
   }
   ul {
     list-style: none;
