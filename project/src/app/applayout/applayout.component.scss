@@ -20,10 +20,10 @@
 
 .scollbar {
   height: 315px;
-  width: 140px; 
+  width: 140px;
   overflow-y: auto;
 }
-.carousel-indicators{
+.carousel-indicators {
   z-index: 1 !important;
 }
 
@@ -31,18 +31,14 @@ div.relative {
   position: relative;
 }
 
-.pic{
-  border-radius: 50%;
-}
-
 .btn-outline {
-  color: #f38c38;
-  border-color: #f38c38;
+  color: #C49D45;
+  border-color: #C49D45;
 }
 
 .btn-outline :hover {
-  color: #f38c38;
-  border-color: #f38c38;
+  color: #C49D45;
+  border-color: #C49D45;
 }
 
 .carousel-caption {
@@ -53,4 +49,4 @@ div.relative {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
-  }
+}

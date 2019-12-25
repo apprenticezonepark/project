@@ -26,7 +26,6 @@ export class ApplayoutComponent implements OnInit {
     "dots":true,
     "infinite": false
   };
-
   items = [
     {
       category: 'ผลิตภัณฑ์ชุมชน',
@@ -80,15 +79,45 @@ export class ApplayoutComponent implements OnInit {
     },
   ]
   itemsConfig = {
-    "slidesToShow": 4, 
-    "slidesToScroll": 4,
+    "slidesToShow": 5, 
+    "slidesToScroll": 5,
+    "nextArrow":"<div class='nav-btn next-slide'></div>",
+    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    "dots":true,
+    "infinite": false
+  }
+  item = [
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'ข้าวหอมมะลิ',
+      price: '120'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'น้ำสมุนไพร',
+      price: '119'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กระเป๋า',
+      price: '200'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'สบู่สมุนไพร',
+      price: '45'
+    }
+  ]
+  itemConfig = {
+    "slidesToShow": 2, 
+    "slidesToScroll": 1,
     "nextArrow":"<div class='nav-btn next-slide'></div>",
     "prevArrow":"<div class='nav-btn prev-slide'></div>",
     "dots":true,
     "infinite": false
   }
   itemList: any;
-  item: any;
+  // item: any;
 
   pageItem: any;
   page_Item: any;
@@ -125,7 +154,7 @@ export class ApplayoutComponent implements OnInit {
 
       this.appservice.getitemall2()
       .then((data: any) => {
-        this.item = data.Data.list_item;
+        // this.item = data.Data.list_item;
         this.page_Item = data.Data.count_item;
       })
       .catch(error => {
@@ -150,7 +179,7 @@ export class ApplayoutComponent implements OnInit {
     console.log(pageitem);
     this.appservice.getpage2(pageitem)
       .then((data: any) => {
-        this.item = data.Data.list_item;
+        // this.item = data.Data.list_item;
         this.page_Item = data.Data.count_item;
       })
   }
