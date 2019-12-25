@@ -1,4 +1,4 @@
-<div  >
+<div>
   <div class="box_menu">
     <div class="cn">
       <div class="row c_top pb-1 pt-1 a_top">
@@ -15,7 +15,8 @@
       </div>
       <div class="row">
         <div class="col-12  d-flex align-items-center mt-2">
-          <div class="ml-2 mr-3"><img src="/assets/img/afarm_logo.png" alt="logo" width="120px"></div>
+          <div class="ml-2 mr-3"><img src="/assets/img/afarm_logo.png" (click)="active_menu('')" alt="logo"
+              width="120px"></div>
           <div style="width: 100%;">
             <input class="form-control text_form" style="padding-left: 35px" type="text" name="sch" id="sch"
               placeholder="ค้นหาสินค้า">
@@ -36,127 +37,38 @@
       <hr>
       <!-- a_menu -->
 
-
       <div class="row ">
-        <div class="col-12 pt-1">
+        <div class="col-12">
           <div class="nav">
             <ul class="row  a_menu">
-              <li><a href="#" (click)="active_menu(1)" id="1">หน้าหลัก</a></li>
-              <li><a href="#" (click)="active_menu(2)" id="2">เกษตรอินทรีย์ และอาหารปลอดภัย</a></li>
-              <li><a href="#" (click)="active_menu(3)" id="3">ผลิตผลทางการเกษตร</a></li>
+              <li><a class="btn active" (click)="active_menu('')" id="homepage">หน้าหลัก</a></li>
+              <li *ngFor="let data of data_te ;"><a class="btn" (click)="active_menu('nextpage/'+data.ic_id)"
+                  id="nextpage/{{data.ic_id}}">{{data.ic_name}}</a>
 
-              <li>
-                <a href="#" (click)="active_menu(4)" id="4">พันธุ์พืช</a>
-                <div class="pt-2">
-                  <ul>
-                    <li>
-                      <div class="d-flex align-items-center" style="position: relative;">
-                        <a href="#">พืช</a>
-                        <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
-                      </div>
-                      <ul>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">พืช1</a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">พืช2</a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">พืช3</a>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
+              <!--ทำ groups -->
+              <!-- <ul> -->
+              <ul *ngIf="data.groups !=null || data.groups != undefined " >
+                <li *ngFor="let datagroups of data.groups ;">
+                  <div class="d-flex align-items-center">
+                    <a >{{datagroups.ig_name}}</a>
+                    <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
+                  </div>
+                  <ul *ngIf="datagroups.sub_groups !=null || datagroups.sub_groups != undefined " >
+                    <li *ngFor="let datasub_groups of datagroups.sub_groups ;">
                       <div class="d-flex align-items-center">
-                        <a href="#">ผักและผลไม้</a>
-                        <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
+                        <a class="tn">{{datasub_groups.isg_name}}</a>
                       </div>
-
-                      <ul>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">testlist1</a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">testlist2</a>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center">
-                            <a href="#">testlist3</a>
-                          </div>
-                        </li>
-                      </ul>
                     </li>
-
                   </ul>
-                </div>
+                </li>
+              </ul>
+            </li>
 
-              </li>
             </ul>
-
-
           </div>
-
-          <!-- <ul>
-          <li><a href="#">Photoshop</a></li>
-          <li><a href="#">Illustrator</a></li>
-          <li><a href="#">Web Design</a>
-            <ul>
-              <li><a href="#">HTML</a></li>
-              <li><a href="#">CSS</a></li>
-            </ul>
-          </li>
-        </ul> -->
-
-          <!-- 
-
-        <div class="dropdown">
-          
-          <div class="dropdown-content">
-            <a *ngFor="let data of data_test" style="padding-top: 8px; padding-bottom: 8px;" href="#">{{data}}</a>
-          </div>
-        </div>
-
-
-        <div class="dropdown">
-          <a class="dropbtn" href="#" (click)="active_menu(5)" id="5">ผลิตภัณฑ์ชุมชน</a>
-
-          <div class="dropdown-content">
-            <a *ngFor="let data of data_test" class="d-flex"
-              style="padding-top: 8px; padding-bottom: 8px;display: block !important;" href="#">{{data}}<i
-                class="fas fa-chevron-right mr-auto"></i></a>
-
-
-            <div class="d-flex v-center"><a class="flex d-block p-2">ผลิตภัณฑ์เกษตรแปรรูป</a><i
-                class="mr-2 fas fa-chevron-right" style="color: #ccc"></i></div>
-
-
-          </div>
-        </div>
-
-
-
-        <a href="#" (click)="active_menu(6)" id="6">บริการด้านการเกษตร</a>
-        <a href="#" (click)="active_menu(7)" id="7">ชุมชนต้องเที่ยว</a>
-        <a href="#" (click)="active_menu(8)" id="8">สินค้าตามภูมิภาค</a>
-        <a href="#" (click)="active_menu(9)" id="9">ของดี 77 จังหวัด</a> -->
         </div>
       </div>
-
-
-
-
     </div>
-
   </div>
 
   <div style="padding-top: 145px; ">

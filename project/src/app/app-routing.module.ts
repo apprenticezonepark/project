@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ApplayoutComponent } from "./applayout/applayout.component";
 import { AppComponent } from "./app.component";
 import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
+import { NextpageComponent } from './nextpage/nextpage.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
         component: ApplayoutComponent
       }
     ]
+  },
+  {
+    path: "nextpage/:id",
+    component: NextpageComponent
   },
   {
     path: "**",

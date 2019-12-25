@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { appservice } from './service/applayout.service';
 import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NextpageComponent } from './nextpage/nextpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApplayoutComponent,
-    FilenotfoundComponent
+    FilenotfoundComponent,
+    NextpageComponent
   ],
   imports: [
     BrowserModule,
