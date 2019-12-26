@@ -523,11 +523,8 @@ export class AppComponent {
   }
 
   active_menu(id) {
-    console.log(id);
-    this.router.navigate([id]);
-
+    
     for (let i = 0; i < this.data_te.length; i++) {
-      // console.log('nextpage/'+this.data_te[i].ic_id);
       document
         .getElementById('homepage')
         .classList.remove("active");
@@ -535,12 +532,18 @@ export class AppComponent {
         .getElementById("nextpage/" + this.data_te[i].ic_id)
         .classList.remove("active");
     }
-
     if(id==''){
       document.getElementById('homepage').classList.add("active");
     }
     else{
       document.getElementById(id).classList.add("active");
     }
+    this.nextpage(id);
+    window.scrollTo(0,0);
+  }
+
+  nextpage(id){
+    console.log(id);
+    this.router.navigate([id]);
   }
 }
