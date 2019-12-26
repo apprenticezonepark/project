@@ -3,8 +3,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { appservice } from '../service/applayout.service';
 
-declare var $;
-
 @Component({
   selector: 'app-applayout',
   templateUrl: './applayout.component.html',
@@ -13,10 +11,6 @@ declare var $;
 export class ApplayoutComponent implements OnInit {
 
   title = 'ngSlick';
-  // slides = [
-  //   {img: "../assets/main_newyear.jpg"},
-  //   {img: "../assets/main_header.jpg"}
-  // ];
   slideConfig = {
     autoplay: 3000,
     "slidesToShow": 1, 
@@ -44,7 +38,7 @@ export class ApplayoutComponent implements OnInit {
     },
     {
       category: 'ผลิตภัณฑ์ชุมชน',
-      name: 'เสื่อกกประยุกต์',
+      name: 'เสื่อกก',
       price: '450'
     },
     {
@@ -116,14 +110,48 @@ export class ApplayoutComponent implements OnInit {
     "dots":true,
     "infinite": false
   }
-  itemList: any;
-  // item: any;
-
-  pageItem: any;
-  page_Item: any;
-  page_i: any;
-  page: any;
-  config: any = "http://10.0.130.101:8080/dev/trainee/content/";
+  itemall = [
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'ข้าวหอมมะลิ',
+      price: '120'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'น้ำสมุนไพร',
+      price: '119'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กระเป๋า',
+      price: '200'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'เสื่อกก',
+      price: '450'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'ข้าวไรซ์เบอรี่',
+      price: '180'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'สบู่สมุนไพร',
+      price: '45'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'ข้าวตัง',
+      price: '30'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กล้วยน้ำว้า',
+      price: '80'
+    }
+  ]
   url: SafeResourceUrl;
   video: any = [
     "tgbNymZ7vqY",
@@ -137,51 +165,12 @@ export class ApplayoutComponent implements OnInit {
   constructor(private dom: DomSanitizer, private http: HttpClient, private appservice: appservice) {
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
-    this.page = 1;
-    // this.page_i = 1;
   }
 
-  ngOnInit() {
-
-    this.appservice.getitemall()
-      .then((data: any) => {
-        this.itemList = data.Data.list_item;
-        this.pageItem = data.Data.count_item;
-      })
-      .catch(error => {
-
-      })
-
-      this.appservice.getitemall2()
-      .then((data: any) => {
-        // this.item = data.Data.list_item;
-        this.page_Item = data.Data.count_item;
-      })
-      .catch(error => {
-
-      })
-  }
+  ngOnInit() { }
 
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
-  }
-
-  pageitem(page_item){
-    console.log(page_item);
-    this.appservice.getpage(page_item)
-      .then((data: any) => {
-        this.itemList = data.Data.list_item;
-        this.pageItem = data.Data.count_item;
-      })
-  }
-
-  page_item(pageitem){
-    console.log(pageitem);
-    this.appservice.getpage2(pageitem)
-      .then((data: any) => {
-        // this.item = data.Data.list_item;
-        this.page_Item = data.Data.count_item;
-      })
   }
 
   slickInit(e) {

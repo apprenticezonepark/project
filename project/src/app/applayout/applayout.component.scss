@@ -2,12 +2,14 @@
   color: #c49d45;
   background-color: #ffffff;
   border-color: #c49d45;
+  box-shadow: none;
 }
 
 .btn-item {
   color: #fff;
   background-color: #c49d45;
   border-color: #c49d45;
+  box-shadow: none;
 }
 
 .btn-province:hover {
@@ -34,6 +36,7 @@ div.relative {
 .btn-outline {
   color: #C49D45;
   border-color: #C49D45;
+  box-shadow: none;
 }
 
 .btn-outline :hover {
@@ -49,4 +52,26 @@ div.relative {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.picture {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-family: "Kanit", sans-serif;
 }
