@@ -150,6 +150,26 @@ export class ApplayoutComponent implements OnInit {
       category: 'ผลิตภัณฑ์ชุมชน',
       name: 'กล้วยน้ำว้า',
       price: '80'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กล้วยไข่',
+      price: '100'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กล้วยฉาบ',
+      price: '50'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'น้ำผึ้ง',
+      price: '200'
+    },
+    {
+      category: 'ผลิตภัณฑ์ชุมชน',
+      name: 'กำไล',
+      price: '80'
     }
   ]
   url: SafeResourceUrl;
