@@ -182,15 +182,19 @@ export class ApplayoutComponent implements OnInit {
   ];
   vdo_id: any;
 
-  constructor(private dom: DomSanitizer, private http: HttpClient, private appservice: appservice) {
+  constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice) {
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
   }
 
   ngOnInit() { 
-    this.appservice.getreco().then((data) => {
+    this.app_sv.getreco().then((data) => {
+      // console.log(data)
+    });
+
+    this.app_sv.getBestSeller().then((data) => {
       console.log(data)
-    })
+    });
   }
 
   showvdo(dd) {

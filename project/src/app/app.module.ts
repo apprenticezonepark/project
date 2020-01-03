@@ -11,6 +11,7 @@ import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NextpageComponent } from './nextpage/nextpage.component';
 import { appcomponentservice } from './service/appcomponent.service';
+import { config_service } from './service/config_service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { appcomponentservice } from './service/appcomponent.service';
     HttpClientModule,
     SlickCarouselModule
   ],
-  providers: [appservice,appcomponentservice],
+  providers: [appservice,appcomponentservice,config_service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
