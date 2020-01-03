@@ -76,3 +76,10 @@ div.relative {
   font-family: "Kanit", sans-serif;
   user-select: none;
 }
+
+.cut-text {
+  text-overflow: ellipsis; /* เพิ่ม ... จุดจุดจุดท้ายสุด */
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
