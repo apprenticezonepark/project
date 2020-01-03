@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { appcomponentservice } from "./service/appcomponent.service";
+import { appservice } from './service/applayout.service';
+
 
 @Component({
   selector: "app-root",
@@ -21,6 +24,9 @@ export class AppComponent {
     "สินค้าตามภูมิภาค",
     "ของดี 77 จังหวัด"
   ];
+
+  // data_te: any;
+
 
   data_te: any = [
     {
@@ -514,36 +520,68 @@ export class AppComponent {
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private app_sv: appcomponentservice) {}
 
   ngOnInit() {
-    console.log(this.data_te);
+
+    // this.app_sv.getreco().then((data) => {
+    //   console.log(data)
+    // })
+
+
+    // this.app_sv.getmebubar().then((data: any) => {
+    //   this.data_te = data.Data;
+    //   console.log(this.data_te);
+    // });
+
+    // console.log(this.data_te);
     // this.id_bf = "0";
     // document.getElementById(this.id_bf).classList.add("active");
   }
 
-  active_menu(id) {
-    
+  active_menu(ic,ig,isg) {
     for (let i = 0; i < this.data_te.length; i++) {
-      document
-        .getElementById('homepage')
-        .classList.remove("active");
+      document.getElementById("homepage").classList.remove("active");
       document
         .getElementById("nextpage/" + this.data_te[i].ic_id)
         .classList.remove("active");
     }
-    if(id==''){
-      document.getElementById('homepage').classList.add("active");
+    if (ic == "") {
+      document.getElementById("homepage").classList.add("active");
+    } else {
+      document.getElementById(ic).classList.add("active");
     }
-    else{
-      document.getElementById(id).classList.add("active");
+
+    this.nextpage(ic,ig,isg);
+    window.scrollTo(0, 0);
+    
+    //หยุดการแพร่กระจายเหตุการณ์ของเมาส์
+    event.stopPropagation();
+     if(isg == undefined){
+      console.log('ig = '+ig);
     }
-    this.nextpage(id);
-    window.scrollTo(0,0);
+    else if(isg != undefined){
+      console.log('ig = '+ig);
+      console.log('isg = '+isg);
+    }
+   
   }
 
-  nextpage(id){
-    console.log(id);
-    this.router.navigate([id]);
+  nextpage(ic,ig,isg) {
+
+// console.log(isg);
+
+    if(isg != undefined || isg != null){
+      this.router.navigate([ic+'/'+ig+'/'+isg]);
+     
+    }
+    else if(ig != undefined || ig != null){
+      this.router.navigate([ic+'/'+ig]);
+    }
+    else {
+      this.router.navigate([ic]);
+    }
+   
+
   }
 }

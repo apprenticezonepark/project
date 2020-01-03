@@ -48,13 +48,13 @@
               <!--ทำ groups -->
               <!-- <ul> -->
               <ul *ngIf="data.groups !=null || data.groups != undefined " >
-                <li *ngFor="let datagroups of data.groups ;">
+                <li *ngFor="let datagroups of data.groups ;" (click)="active_menu('nextpage/'+data.ic_id,datagroups.ig_id)">
                   <div class="d-flex align-items-center">
                     <a >{{datagroups.ig_name}}</a>
                     <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
                   </div>
                   <ul *ngIf="datagroups.sub_groups !=null || datagroups.sub_groups != undefined " >
-                    <li *ngFor="let datasub_groups of datagroups.sub_groups ;">
+                    <li *ngFor="let datasub_groups of datagroups.sub_groups ;" (click)="active_menu('nextpage/'+data.ic_id,datagroups.ig_id,datasub_groups.isg_id)">
                       <div class="d-flex align-items-center">
                         <a class="tn">{{datasub_groups.isg_name}}</a>
                       </div>

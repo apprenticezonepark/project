@@ -7,12 +7,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./nextpage.component.scss']
 })
 export class NextpageComponent implements OnInit {
-id : any;
+ic : any;
+ig : any;
+isg : any;
   constructor(
     private getrouter: ActivatedRoute
   ) {
     this.getrouter.paramMap.subscribe(itemid => {
-      this.id = itemid.get("id");
+      this.ic = itemid.get("ic");
+      this.ig = itemid.get("ig");
+      this.isg = itemid.get("isg");
     }); }
 
   ngOnInit() {

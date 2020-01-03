@@ -10,6 +10,7 @@ import { appservice } from './service/applayout.service';
 import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NextpageComponent } from './nextpage/nextpage.component';
+import { appcomponentservice } from './service/appcomponent.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { NextpageComponent } from './nextpage/nextpage.component';
     HttpClientModule,
     SlickCarouselModule
   ],
-  providers: [appservice],
+  providers: [appservice,appcomponentservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

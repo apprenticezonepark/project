@@ -187,7 +187,11 @@ export class ApplayoutComponent implements OnInit {
     this.vdo_id = 0;
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.appservice.getreco().then((data) => {
+      console.log(data)
+    })
+  }
 
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
