@@ -65,7 +65,6 @@ export class appservice {
     } 
 
     FindByBestseller(): Promise<any> {
-        debugger;
         let _sc_id: '103';
         let _sc_type: '100123';
         let _products_page: '10';

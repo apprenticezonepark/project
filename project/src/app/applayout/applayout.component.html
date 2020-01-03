@@ -98,8 +98,8 @@
                         </iframe>
                     </div>
                     <div class="flex ml-3 scollbar mw-200 mh-315">
-                        <div *ngFor="let vdo of video; index as i">
-                            <img class="mw-100 mh-100" src="https://img.youtube.com/vi/{{video[i]}}/{{1}}.jpg"
+                        <div class="mb-3" *ngFor="let vdo of video; index as i">
+                            <img class="mw-100 mh-100" src="https://img.youtube.com/vi/{{video[i]}}/{{0}}.jpg"
                                 (click)="showvdo(i)" />
                         </div>
                     </div>
@@ -113,20 +113,23 @@
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-                <div ngxSlickItem *ngFor="let slide of items" class="slide" style="padding-right: 10px;">
+                <div ngxSlickItem *ngFor="let data of itemList" class="slide" style="padding-right: 10px;">
                     <div class="card" style="width: auto; height: auto;">
                         <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="./assets/muanjai.png" alt="..." width="60px" height="60px">
+                            <img *ngIf="data.item_pic_path != null" src="{{config_sv.config_pic}}{{data.item_pic_path.content_path}}" class="rounded"
+                            alt="..." width="60px" height="60px"
+                            onerror="this.onerror=null;this.src='/assets/muanjai.png'">
+                            <img *ngIf="data.item_pic_path == null" src="./assets/muanjai.png" alt="..." width="60px" height="60px">
                         </div>
                         <div class="card-body">
                             <div style="width: 10rem;"><span class="card-text"
-                                    style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
+                                    style="font-size: 12px; color: grey; user-select: none;">{{ data.ic_name }}</span>
                             </div>
                             <div style="width: 10rem; color: #555; user-select: none;"><span
-                                    class="card-text">{{ slide.name }}</span>
+                                    class="card-text">{{ data.item_name }}</span>
                             </div>
                             <div style="width: 10rem; color: #555; user-select: none;"><span class="card-text"> THB
-                                    <span style="color: green;">{{ slide.price }} </span></span></div>
+                                    <span style="color: green;">{{ data.sale_price }} </span></span></div>
                         </div>
                     </div>
                 </div>

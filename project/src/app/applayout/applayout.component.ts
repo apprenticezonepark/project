@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { appservice } from '../service/applayout.service';
+import { config_service } from '../service/config_service';
 
 @Component({
   selector: 'app-applayout',
@@ -181,8 +182,9 @@ export class ApplayoutComponent implements OnInit {
     "B6TvrxUml9E"
   ];
   vdo_id: any;
+  itemList: any;
 
-  constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice) {
+  constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice, private config_sv: config_service) {
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
   }
@@ -191,7 +193,8 @@ export class ApplayoutComponent implements OnInit {
     // debugger;
     this.app_sv.getreco()
     .then((data) => {
-      console.log(data)
+      console.log(data);
+      this.itemList = data.Data.item_list;
     });
 
     // this.app_sv.getBestSeller().then((data) => {
