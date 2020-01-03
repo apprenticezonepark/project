@@ -188,11 +188,23 @@ export class ApplayoutComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.app_sv.getreco().then((data) => {
-      // console.log(data)
+    // debugger;
+    this.app_sv.getreco()
+    .then((data) => {
+      console.log(data)
     });
 
-    this.app_sv.getBestSeller().then((data) => {
+    // this.app_sv.getBestSeller().then((data) => {
+    //   console.log(data)
+    // });
+
+    this.getBestseller();
+
+  }
+
+  getBestseller() {
+    this.app_sv.FindByBestseller()
+    .then((data) => {
       console.log(data)
     });
   }

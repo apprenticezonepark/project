@@ -56,13 +56,49 @@ export class appservice {
             params: new HttpParams({
                 fromObject: {
                     sc_doc_id: sc_id,
-                    sc_doc_type: sc_type,
-                    products_perpage: products_page
+                    sc_doc_type: '100123',
+                    products_perpage: '10'
                 }
-            }) 
-        }, this.extAuthorizationHeader()) 
+            })
+        }, this.extAuthorizationHeader())
         ).toPromise();
     } 
 
+    FindByBestseller(): Promise<any> {
+        debugger;
+        let _sc_id: '103';
+        let _sc_type: '100123';
+        let _products_page: '10';
+        let _param = new HttpParams();
+        _param.set("sc_doc_id", _sc_id);
+        _param.set("sc_doc_type", _sc_type);
+        _param.set("products_perpage", _products_page);
+        return this.http.get(this.config_sv.config_api+ '/mkp/product/bestseller/1/3/2',
+            Object.assign({
+                params: new HttpParams({
+                    fromObject: {
+                        sc_doc_id: _sc_id,
+                        sc_doc_type: _sc_type,
+                        products_perpage: _products_page
+                    }
+                })
+            }, this.extAuthorizationHeader())
+        ).toPromise();
+    }
+
+    // FindByBestseller(): Promise<any> {
+    //     return this.http.get(Config.ExternalServiceUrl[this.mode] + `/mkp/product/bestseller/1/3/2`,
+    //         Object.assign({
+    //             params: new HttpParams({
+    //                 fromObject: {
+    //                     sc_doc_id: 103,
+    //                     sc_doc_type: 100123,
+    //                     products_perpage: 10
+    //                 }
+    //             })
+    //         }, this.extAuthorizationHeader())
+    //     ).toPromise()
+    // }
+    
 
 }
