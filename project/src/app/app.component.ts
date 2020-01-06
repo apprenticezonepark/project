@@ -1,8 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { appcomponentservice } from "./service/appcomponent.service";
-import { appservice } from './service/applayout.service';
-
+import { appservice } from "./service/applayout.service";
 
 @Component({
   selector: "app-root",
@@ -26,7 +25,6 @@ export class AppComponent {
   ];
 
   // data_te: any;
-
 
   data_te: any = [
     {
@@ -523,65 +521,78 @@ export class AppComponent {
   constructor(private router: Router, private app_sv: appcomponentservice) {}
 
   ngOnInit() {
-
     // this.app_sv.getreco().then((data) => {
     //   console.log(data)
     // })
-
-
     // this.app_sv.getmebubar().then((data: any) => {
     //   this.data_te = data.Data;
     //   console.log(this.data_te);
     // });
-
     // console.log(this.data_te);
     // this.id_bf = "0";
     // document.getElementById(this.id_bf).classList.add("active");
   }
 
-  active_menu(ic,ig,isg) {
+  active_menu(id, id_name,id_at) {
     for (let i = 0; i < this.data_te.length; i++) {
       document.getElementById("homepage").classList.remove("active");
       document
         .getElementById("nextpage/" + this.data_te[i].ic_id)
         .classList.remove("active");
     }
-    if (ic == "") {
+    if (id_at == "") {
       document.getElementById("homepage").classList.add("active");
     } else {
-      document.getElementById(ic).classList.add("active");
+      document.getElementById("nextpage/" + id_at).classList.add("active");
     }
 
-    this.nextpage(ic,ig,isg);
+    this.nextpage(id, id_name);
     window.scrollTo(0, 0);
-    
+
     //หยุดการแพร่กระจายเหตุการณ์ของเมาส์
     event.stopPropagation();
-     if(isg == undefined){
-      console.log('ig = '+ig);
-    }
-    else if(isg != undefined){
-      console.log('ig = '+ig);
-      console.log('isg = '+isg);
-    }
-   
+
+    // if (isg == undefined) {
+    //   console.log("ig = " + ig);
+    // } else if (isg != undefined) {
+    //   console.log("ig = " + ig);
+    //   console.log("isg = " + isg);
+    // }
   }
 
-  nextpage(ic,ig,isg) {
+  nextpage(id, id_code) {
+    // console.log(ic);
 
-// console.log(isg);
+    // for (i = 0; i < this.data_te.length; i++) {
+    //   if (ic == this.data_te[i].ic_id) {
+    //     nt_ic_code = this.data_te[i].ic_code;
+    //   }
+    // }
 
-    if(isg != undefined || isg != null){
-      this.router.navigate([ic+'/'+ig+'/'+isg]);
-     
+    // if (isg != undefined || isg != null) {
+    //   this.router.navigate(["nextpage/" + ic + "/" + ig + "/" + isg]);
+    // } else if (ig != undefined || ig != null) {
+    //   this.router.navigate(["nextpage/" + ic + "/" + ig]);
+    // } else if (ic != "") {
+    //   this.router.navigate(["nextpage/" + ic], {
+    //     queryParams: { ic_code: nt_ic_code }
+    //   });
+    // }
+    // else {
+    if (id_code == "homepage") {
+      this.router.navigate([""]);
+    } else if (id_code == "") {
+      this.router.navigate(["nextpage/" + id]);
+    } else if (id_code == "ig_id") {
+      this.router.navigate(["nextpage/" + id], {
+        queryParams: { ig_id: id }
+      });
+    } else if (id_code == "isg_id") {
+      this.router.navigate(["nextpage/" + id], {
+        queryParams: { isg_id: id }
+      });
     }
-    else if(ig != undefined || ig != null){
-      this.router.navigate([ic+'/'+ig]);
-    }
-    else {
-      this.router.navigate([ic]);
-    }
-   
 
+    // }
   }
 }

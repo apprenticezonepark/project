@@ -15,7 +15,7 @@
       </div>
       <div class="row">
         <div class="col-12  d-flex align-items-center mt-2">
-          <div class="ml-2 mr-3"><img src="/assets/img/afarm_logo.png" (click)="active_menu('')" alt="logo"
+          <div class="ml-2 mr-3"><img src="/assets/img/afarm_logo.png" (click)="active_menu('','homepage','')" alt="logo"
               width="120px"></div>
           <div style="width: 100%;">
             <input class="form-control text_form" style="padding-left: 35px" type="text" name="sch" id="sch"
@@ -41,20 +41,20 @@
         <div class="col-12">
           <div class="nav">
             <ul class="row  a_menu">
-              <li><a class="btn active" (click)="active_menu('')" id="homepage">หน้าหลัก</a></li>
-              <li *ngFor="let data of data_te ;"><a class="btn" (click)="active_menu('nextpage/'+data.ic_id)"
+              <li><a class="btn active" (click)="active_menu('','homepage','')" id="homepage">หน้าหลัก</a></li>
+              <li *ngFor="let data of data_te ;"><a class="btn" (click)="active_menu(data.ic_id,'',data.ic_id)"
                   id="nextpage/{{data.ic_id}}">{{data.ic_name}}</a>
 
               <!--ทำ groups -->
               <!-- <ul> -->
               <ul *ngIf="data.groups !=null || data.groups != undefined " >
-                <li *ngFor="let datagroups of data.groups ;" (click)="active_menu('nextpage/'+data.ic_id,datagroups.ig_id)">
+                <li *ngFor="let datagroups of data.groups ;" (click)="active_menu(datagroups.ig_id,'ig_id',data.ic_id)">
                   <div class="d-flex align-items-center">
                     <a >{{datagroups.ig_name}}</a>
                     <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
                   </div>
                   <ul *ngIf="datagroups.sub_groups !=null || datagroups.sub_groups != undefined " >
-                    <li *ngFor="let datasub_groups of datagroups.sub_groups ;" (click)="active_menu('nextpage/'+data.ic_id,datagroups.ig_id,datasub_groups.isg_id)">
+                    <li *ngFor="let datasub_groups of datagroups.sub_groups ;" (click)="active_menu(datasub_groups.isg_id,'isg_id',data.ic_id)">
                       <div class="d-flex align-items-center">
                         <a class="tn">{{datasub_groups.isg_name}}</a>
                       </div>

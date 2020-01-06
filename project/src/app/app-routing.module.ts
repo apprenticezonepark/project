@@ -17,15 +17,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "nextpage/:ic",
-    component: NextpageComponent
-  },
-  {
-    path: "nextpage/:ic/:ig",
-    component: NextpageComponent
-  },
-  {
-    path: "nextpage/:ic/:ig/:isg",
+    path: "nextpage/:id",
     component: NextpageComponent
   },
   {

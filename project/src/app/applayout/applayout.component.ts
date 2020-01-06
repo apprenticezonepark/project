@@ -201,7 +201,7 @@ export class ApplayoutComponent implements OnInit {
     //   console.log(data)
     // });
 
-    this.getBestseller();
+    // this.getBestseller();
 
   }
 

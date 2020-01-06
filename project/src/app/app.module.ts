@@ -18,7 +18,8 @@ import { config_service } from './service/config_service';
     AppComponent,
     ApplayoutComponent,
     FilenotfoundComponent,
-    NextpageComponent
+    NextpageComponent,
+    
   ],
   imports: [
     BrowserModule,

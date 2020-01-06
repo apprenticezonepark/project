@@ -7,19 +7,25 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./nextpage.component.scss']
 })
 export class NextpageComponent implements OnInit {
-ic : any;
-ig : any;
-isg : any;
+id : any;
   constructor(
     private getrouter: ActivatedRoute
-  ) {
-    this.getrouter.paramMap.subscribe(itemid => {
-      this.ic = itemid.get("ic");
-      this.ig = itemid.get("ig");
-      this.isg = itemid.get("isg");
-    }); }
+  ) {}
 
   ngOnInit() {
+    this.getrouter.paramMap.subscribe(itemid => {
+      this.id = itemid.get("id");
+      // console.log(this.id);
+    }); 
+
+    this.getrouter.queryParams.subscribe(params => {
+      if(params.ig_id != undefined){
+        console.log('ig_id = '+params.ig_id);
+      }
+      else if(params.isg_id != undefined){
+      console.log('isg_id = '+params.isg_id)
+      };
+    });
   }
 
 }
