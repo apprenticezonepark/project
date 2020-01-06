@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-6">
+            <img [src]="pic_src[nb_pic]" alt="product" width="100%">
+            <hr>
+            <div class="row justify-content-center">
+               <img *ngFor="let pic of pic_src; index as i ;" class="pic_sub" [src]="pic_src[i]" alt="product1" (click)="nb_pic=i" >
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>น้องแมว</h2>
+            <div class="f_25 mt-2 mb-3">
+                <span>ราคา </span>
+                <span style="color: rgb(0, 190, 0);">20</span>
+            </div>
+            <div class="f_14 mt-2">
+                <span>สำหรับรายละเอียด</span>
+            </div>
+
+            <div class="d-flex f_14 mt-2">
+                <div class="l_d">
+                    <label>หมวดหมู่สินค้า : </label>
+                </div>
+                <span class="d-flex">เกษตรอินทรีย์ และอาหารปลอดภัย, เกษตรอินทรีย์ และอาหารปลอดภัย, เกษตรอินทรีย์
+                    และอาหารปลอดภัย</span>
+            </div>
+            <div class="d-flex f_14 mt-2">
+                <div class="l_d">
+                    <label>น้ำหนัก : </label>
+                </div>
+                <span class="d-flex">5000 กรัม</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <ul class="d-flex li_a">
+            <li>
+                <a class="mr-4" (click)="show_des=1" [ngClass]="{'a_active': show_des=='1'}">รายละเอียดสินค้า</a>
+            </li>
+            <li>
+                <a class="mr-4" (click)="show_des=2" [ngClass]="{'a_active': show_des=='2'}">สินค้าบอกเรื่องราว</a>
+            </li>
+        </ul>
+    </div>
+    <hr style="margin-top: 1px;">
+    <div style=" background-color: #f8f8f8;">
+        <div *ngIf="show_des==1">
+            <span>ยังไม่มีข้อมูล</span>
+        </div>
+        <div *ngIf="show_des==2">
+            <div class="text-center">
+                <iframe class=" mt-4 mb-1" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -4,6 +4,7 @@ import { ApplayoutComponent } from "./applayout/applayout.component";
 import { AppComponent } from "./app.component";
 import { FilenotfoundComponent } from './filenotfound/filenotfound.component';
 import { NextpageComponent } from './nextpage/nextpage.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: "nextpage/:id",
     component: NextpageComponent
+  },
+  {
+    path: "product",
+    component: ProductComponent
   },
   {
     path: "**",

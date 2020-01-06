@@ -12,6 +12,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NextpageComponent } from './nextpage/nextpage.component';
 import { appcomponentservice } from './service/appcomponent.service';
 import { config_service } from './service/config_service';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { config_service } from './service/config_service';
     ApplayoutComponent,
     FilenotfoundComponent,
     NextpageComponent,
+    ProductComponent,
     
   ],
   imports: [
