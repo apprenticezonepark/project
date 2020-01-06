@@ -78,7 +78,7 @@ export class ApplayoutComponent implements OnInit {
     "slidesToScroll": 5,
     "nextArrow":"<div class='nav-btn next-slide'></div>",
     "prevArrow":"<div class='nav-btn prev-slide'></div>",
-    "dots":true,
+    // "dots":true,
     "infinite": false
   }
   item = [
@@ -201,7 +201,7 @@ export class ApplayoutComponent implements OnInit {
     //   console.log(data)
     // });
 
-    // this.getBestseller();
+    this.getBestseller();
 
   }
 
