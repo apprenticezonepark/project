@@ -63,6 +63,8 @@ hr {
 }
 
 .pic_sub{
+    object-fit: cover;
+    width: 80px;
     height: 60px;
     margin: 0 0.5rem;
     cursor: pointer;

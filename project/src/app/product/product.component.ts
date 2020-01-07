@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
   show_des :any ;
   nb_pic : number;
-  pic_src:any = ['/assets/img/bird.jpg','/assets/img/fox.jpg'];
+  pic_src:any = ['/assets/img/bird.jpg','/assets/img/fox.jpg','/assets/img/zoo.jpg'];
   constructor() { }
 
   ngOnInit() {
