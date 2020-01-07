@@ -27,9 +27,9 @@
             </div>
         </ngx-slick-carousel>
     </div>
-    <!-- <div class="continer" style="z-index: 1; margin-top: 40px;">
+    <!-- <div class="container" style="z-index: 1; margin-top: 40px;">
         <span style="margin-left: 100px; font-size: 25px; color: #555;">สินค้ายอดนิยม</span>
-        <div style="margin-top: 20px; margin-left: 140px; margin-right: 140px;">
+        <div style="margin-top: 20px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
@@ -53,13 +53,13 @@
             </ngx-slick-carousel>
         </div>
     </div> -->
-    <div class="continer" style="z-index: 1; margin-top: 40px;">
+    <div class="container" style="z-index: 1; margin-top: 40px;">
         <div class="d-flex">
-            <div class="mr-auto p-2" style="margin-left: 100px; font-size: 25px; color: #555;">สินค้าปีใหม่</div>
-            <div class="p-2" style="margin-right: 130px; font-size: 15px; color: #6c757d; user-select: none;">
+            <div class="mr-auto p-2" style="font-size: 25px; color: #555;">สินค้าปีใหม่</div>
+            <div class="p-2" style="font-size: 15px; color: #6c757d; user-select: none;">
                 ดูสินค้าทั้งหมด<i class="fas fa-chevron-right"></i></div>
         </div>
-        <div style="margin-top: 20px; margin-left: 140px; margin-right: 140px;">
+        <div style="margin-top: 20px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
@@ -111,40 +111,27 @@
             </div>
         </div>
     </div> -->
-    <div class="continer" style="z-index: 1; margin-top: 40px;">
-        <span style="margin-left: 100px; font-size: 25px; color: #555;">สินค้าแนะนำ</span>
-        <div style="margin-left: 120px; margin-right: 140px;">
-            <div class="row">
-                <div class="col-md-12 p-relative" style="z-index: 10;">
-                    <div class="d-flex v-center h-center"
-                        style="position: absolute; width: 50px; top: 0; left: 0; height: 100%;  padding-top: 100px;">
-                        <div class="p-2 mr-auto">
-                            <a class="next round" style="color: #c49d45;" (click)="prev()">
-                                <i class="fas fa-angle-left fa-2x"></i></a>
-                        </div>
+    <div class="container" style="z-index: 1; margin-top: 40px;">
+        <span style="font-size: 25px; color: #555;">สินค้าแนะนำ</span>
+        <div class="row">
+            <div class="col-md-12 p-relative" style="z-index: 10;">
+                <div class="d-flex v-center h-center"
+                    style="position: absolute; width: 50px; top: 0; left: 0; height: 100%;  padding-top: 100px;">
+                    <div class="mr-auto">
+                        <a type="button" class="next round" style="color: #c49d45;" (click)="changePage(-1)">
+                            <i class="fas fa-angle-left fa-2x"></i></a>
                     </div>
-                    <div class="d-flex v-center h-center"
-                        style="position: absolute; width: 50px; top: 0; right: 0; height: 100%;  padding-top: 100px;">
-                        <div class="p-2">
-                            <a class="previous round" style="color: #c49d45;" (click)="next()"><i
-                                    class="fas fa-angle-right fa-2x"></i></a>
-                        </div>
+                </div>
+                <div class="d-flex v-center h-center"
+                    style="position: absolute; width: 50px; top: 0; right: 0; height: 100%;  padding-top: 100px;">
+                    <div>
+                        <a type="button" class="previous round" style="color: #c49d45;" (click)="changePage(1)"><i
+                                class="fas fa-angle-right fa-2x"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div style="position: absolute; z-index: 10;">
-            <div class="d-flex">
-                <div class="p-2 mr-auto" style="margin-left: 100px;">
-                    <a href="#" class="next round" style="color: #c49d45;">
-                        <i class="fas fa-angle-left fa-2x"></i></a>
-                </div>
-                <div class="p-2">
-                    <a href="#" class="previous round" style="color: #c49d45;"><i
-                            class="fas fa-angle-right fa-2x"></i></a></div>
-            </div>
-        </div> -->
-        <div style="margin-top: 20px; margin-left: 140px; margin-right: 140px;">
+        <div style="margin-top: 20px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
@@ -177,203 +164,203 @@
             </ngx-slick-carousel>
         </div>
     </div>
-    <div class="continer" style="z-index: 1; margin-top: 40px;">
-        <span style="margin-left: 100px; font-size: 25px; color: #555;">สินค้าตามหมวดหมู่</span>
-        <div style="margin-left: 100px; margin-right: 100px;">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="card" style="width: auto; height: auto; margin-top: 20px;">
-                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
-                        </div>
-                        <div style="color: #C49D45; font-size: medium; text-align: center;">เกษตรอินทรีย์
-                            และอาหารปลอดภัย</div>
-                        <div style="font-size: small; text-align: center; color: #555;">เกษตรอินทรีย์
-                            และอาหารปลอดภัย
-                        </div>
-                        <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
-                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
-                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
-                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-                                <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
-                                    <div class="card" style="width: auto; height: auto;">
-                                        <div class="pic-box">
-                                            <div class="fill-dock d-flex v-center h-center"
-                                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
-                                                <img class="card-img-top mw-100 mh-100 placeholder"
-                                                    src="./assets/muanjai.png" alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="card-body p-3">
-                                            <div style="width: 10rem;"><span class="card-text cut-text"
-                                                    style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
-                                            </div>
-                                            <div style="width: 10rem; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"
-                                                    style="font-size: 14px;">{{ slide.name }}</span>
-                                            </div>
-                                            <div style="width: 10rem; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"> THB <span
-                                                        style="color: #65BB1A;">{{ slide.price }}
-                                                    </span></span></div>
+    <div class="container" style="z-index: 1; margin-top: 40px;">
+        <span style="font-size: 25px; color: #555;">สินค้าตามหมวดหมู่</span>
+        <!-- <div style="margin-left: 100px; margin-right: 100px;"> -->
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card" style="width: auto; height: auto; margin-top: 20px;">
+                    <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                        <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
+                    </div>
+                    <div style="color: #C49D45; font-size: medium; text-align: center;">เกษตรอินทรีย์
+                        และอาหารปลอดภัย</div>
+                    <div style="font-size: small; text-align: center; color: #555;">เกษตรอินทรีย์
+                        และอาหารปลอดภัย
+                    </div>
+                    <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
+                            (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                            <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
+                                <div class="card" style="width: auto; height: auto;">
+                                    <div class="pic-box">
+                                        <div class="fill-dock d-flex v-center h-center"
+                                            style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
+                                            <img class="card-img-top mw-100 mh-100 placeholder"
+                                                src="./assets/muanjai.png" alt="...">
                                         </div>
                                     </div>
+                                    <div class="card-body p-3">
+                                        <div style="width: 10rem;"><span class="card-text cut-text"
+                                                style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
+                                        </div>
+                                        <div style="width: 10rem; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"
+                                                style="font-size: 14px;">{{ slide.name }}</span>
+                                        </div>
+                                        <div style="width: 10rem; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"> THB <span
+                                                    style="color: #65BB1A;">{{ slide.price }}
+                                                </span></span></div>
+                                    </div>
                                 </div>
-                            </ngx-slick-carousel>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
-                        </div>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="card" style="width: auto; height: auto; margin-top: 20px;">
-                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
-                        </div>
-                        <div style="color: #C49D45; font-size: medium; text-align: center;">ผลิตผลทางการเกษตร
-                        </div>
-                        <div style="font-size: small; text-align: center; color: #555;">ผลิตผลทางการเกษตร</div>
-                        <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
-                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
-                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
-                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-                                <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
-                                    <div class="card" style="width: auto; height: auto;">
-                                        <div class="pic-box">
-                                            <div class="fill-dock d-flex v-center h-center"
-                                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
-                                                <img class="card-img-top mw-100 mh-100 placeholder"
-                                                    src="./assets/muanjai.png" alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="card-body p-3">
-                                            <div style="width: auto;"><span class="card-text cut-text"
-                                                    style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"
-                                                    style="font-size: 14px;">{{ slide.name }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"> THB <span
-                                                        style="color: #65BB1A;">{{ slide.price }}
-                                                    </span></span></div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card" style="width: auto; height: auto; margin-top: 20px;">
+                    <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                        <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
+                    </div>
+                    <div style="color: #C49D45; font-size: medium; text-align: center;">ผลิตผลทางการเกษตร
+                    </div>
+                    <div style="font-size: small; text-align: center; color: #555;">ผลิตผลทางการเกษตร</div>
+                    <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
+                            (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                            <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
+                                <div class="card" style="width: auto; height: auto;">
+                                    <div class="pic-box">
+                                        <div class="fill-dock d-flex v-center h-center"
+                                            style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
+                                            <img class="card-img-top mw-100 mh-100 placeholder"
+                                                src="./assets/muanjai.png" alt="...">
                                         </div>
                                     </div>
+                                    <div class="card-body p-3">
+                                        <div style="width: auto;"><span class="card-text cut-text"
+                                                style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"
+                                                style="font-size: 14px;">{{ slide.name }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"> THB <span
+                                                    style="color: #65BB1A;">{{ slide.price }}
+                                                </span></span></div>
+                                    </div>
                                 </div>
-                            </ngx-slick-carousel>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
-                        </div>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- </div> -->
     </div>
-    <div class="continer" style="z-index: 1; margin-top: 20px;">
-        <div style="margin-left: 100px; margin-right: 100px;">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="card" style="width: auto; height: auto; margin-top: 20px;">
-                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
-                        </div>
-                        <div style="color: #C49D45; font-size: medium; text-align: center;">พันธุ์พืช</div>
-                        <div style="font-size: small; text-align: center; color: #555;">พันธุ์พืช</div>
-                        <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
-                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
-                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
-                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-                                <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
-                                    <div class="card" style="width: auto; height: auto;">
-                                        <div class="pic-box">
-                                            <div class="fill-dock d-flex v-center h-center"
-                                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
-                                                <img class="card-img-top mw-100 mh-100 placeholder"
-                                                    src="./assets/muanjai.png" alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div style="width: auto;"><span class="card-text cut-text"
-                                                    style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"
-                                                    style="font-size: 14px;">{{ slide.name }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"> THB <span
-                                                        style="color: #65BB1A;">{{ slide.price }}
-                                                    </span></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ngx-slick-carousel>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
-                        </div>
+    <div class="container" style="z-index: 1; margin-top: 20px;">
+        <!-- <div style="margin-left: 100px; margin-right: 100px;"> -->
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card" style="width: auto; height: auto; margin-top: 20px;">
+                    <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                        <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
                     </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="card" style="width: auto; height: auto; margin-top: 20px;">
-                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="/assets/muanjai.png" alt="..." width="200px" height="200px">
-                        </div>
-                        <div style="color: #C49D45; font-size: medium; text-align: center;">ผลิตภัณฑ์ชุมชน</div>
-                        <div style="font-size: small; text-align: center; color: #555;">ผลิตภัณฑ์ชุมชน</div>
-                        <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
-                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
-                                (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
-                                (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-                                <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
-                                    <div class="card" style="width: auto; height: auto;">
-                                        <div class="pic-box">
-                                            <div class="fill-dock d-flex v-center h-center"
-                                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
-                                                <img class="card-img-top mw-100 mh-100 placeholder"
-                                                    src="/assets/muanjai.png" alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div style="width: auto;"><span class="card-text cut-text"
-                                                    style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"
-                                                    style="font-size: 14px;">{{ slide.name }}</span>
-                                            </div>
-                                            <div style="width: auto; color: #555; user-select: none;"><span
-                                                    class="card-text cut-text"> THB <span
-                                                        style="color: #65BB1A;">{{ slide.price }}
-                                                    </span></span></div>
+                    <div style="color: #C49D45; font-size: medium; text-align: center;">พันธุ์พืช</div>
+                    <div style="font-size: small; text-align: center; color: #555;">พันธุ์พืช</div>
+                    <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
+                            (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                            <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
+                                <div class="card" style="width: auto; height: auto;">
+                                    <div class="pic-box">
+                                        <div class="fill-dock d-flex v-center h-center"
+                                            style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
+                                            <img class="card-img-top mw-100 mh-100 placeholder"
+                                                src="./assets/muanjai.png" alt="...">
                                         </div>
                                     </div>
+                                    <div class="card-body">
+                                        <div style="width: auto;"><span class="card-text cut-text"
+                                                style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"
+                                                style="font-size: 14px;">{{ slide.name }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"> THB <span
+                                                    style="color: #65BB1A;">{{ slide.price }}
+                                                </span></span></div>
+                                    </div>
                                 </div>
-                            </ngx-slick-carousel>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
-                        </div>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
                     </div>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
-                    <div class="card" style="width: auto; height: auto; margin-top: 40px;">
-                        <div class="d-flex justify-content-center" style="margin-top: 10px;">
-                            <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
-                        </div>
-                        <div style="color: #C49D45; font-size: medium; text-align: center;">บริการด้านการเกษตร
-                        </div>
-                        <div style="font-size: small; text-align: center; margin-bottom: 20px; color: #555;">
-                            บริการด้านการเกษตร</div>
+            <div class="col-12 col-md-6">
+                <div class="card" style="width: auto; height: auto; margin-top: 20px;">
+                    <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                        <img src="/assets/muanjai.png" alt="..." width="200px" height="200px">
+                    </div>
+                    <div style="color: #C49D45; font-size: medium; text-align: center;">ผลิตภัณฑ์ชุมชน</div>
+                    <div style="font-size: small; text-align: center; color: #555;">ผลิตภัณฑ์ชุมชน</div>
+                    <div style="margin-top: 20px; margin-left: 30px; margin-right: 30px;">
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemConfig"
+                            (init)="slickInit($event)" (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                            <div ngxSlickItem *ngFor="let slide of item" class="slide" style="padding-right: 10px;">
+                                <div class="card" style="width: auto; height: auto;">
+                                    <div class="pic-box">
+                                        <div class="fill-dock d-flex v-center h-center"
+                                            style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
+                                            <img class="card-img-top mw-100 mh-100 placeholder"
+                                                src="/assets/muanjai.png" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div style="width: auto;"><span class="card-text cut-text"
+                                                style="font-size: 12px; color: grey; user-select: none;">{{ slide.category }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"
+                                                style="font-size: 14px;">{{ slide.name }}</span>
+                                        </div>
+                                        <div style="width: auto; color: #555; user-select: none;"><span
+                                                class="card-text cut-text"> THB <span
+                                                    style="color: #65BB1A;">{{ slide.price }}
+                                                </span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-outline" style="margin-bottom: 20px;">ดูสินค้าหมวดหมู่นี้</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="width: auto; height: auto; margin-top: 40px;">
+                    <div class="d-flex justify-content-center" style="margin-top: 10px;">
+                        <img src="./assets/muanjai.png" alt="..." width="200px" height="200px">
+                    </div>
+                    <div style="color: #C49D45; font-size: medium; text-align: center;">บริการด้านการเกษตร
+                    </div>
+                    <div style="font-size: small; text-align: center; margin-bottom: 20px; color: #555;">
+                        บริการด้านการเกษตร</div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
     </div>
     <div class="picture d-flex justify-content-center mt-5">
         <img src="./assets/bg.jpeg" alt="" style="width:100%;">
@@ -381,14 +368,14 @@
             <span>ชุมชนต้องเที่ยว</span>
         </div>
     </div>
-    <div class="continer" style="z-index: 1; margin-top: 40px; margin-bottom: 40px;">
+    <div class="container" style="z-index: 1; margin-top: 40px; margin-bottom: 40px;">
         <div class="d-flex">
-            <div class="mr-auto p-2" style="margin-left: 100px; font-size: 25px; color: #555;">
+            <div class="mr-auto p-2" style="font-size: 25px; color: #555;">
                 กิจกรรมและบริการท่องเที่ยว</div>
-            <div class="p-2" style="margin-right: 130px; font-size: 15px; color: #C49D45; user-select: none;">
+            <div class="p-2" style="font-size: 15px; color: #C49D45; user-select: none;">
                 ดูสินค้าทั้งหมด<i class="fas fa-chevron-right"></i></div>
         </div>
-        <div style="margin-top: 20px; margin-left: 140px; margin-right: 140px;">
+        <div style="margin-top: 20px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
@@ -417,8 +404,8 @@
             </ngx-slick-carousel>
         </div>
     </div>
-    <span style="margin-left: 100px; font-size: 25px; margin-top: 40px; color: #555;">สินค้าทั้งหมด</span>
     <div class="container">
+        <span style="font-size: 25px; margin-top: 40px; color: #555;">สินค้าทั้งหมด</span>
         <div class="row" style="margin-top: 20px;">
             <div class="col-4 col-md-3 col-sm-4 col-lg-2 d-flex flex-column mb-4" style="padding-right: 10px;"
                 *ngFor="let data of itemall">

@@ -76,8 +76,8 @@ export class ApplayoutComponent implements OnInit {
   itemsConfig = {
     "slidesToShow": 5, 
     "slidesToScroll": 5,
-    // "nextArrow":"<div class='nav-btn next-slide'></div>",
-    // "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    "nextArrow":"<div class='nav-btn next-slide'></div>",
+    "prevArrow":"<div class='nav-btn prev-slide'></div>",
     // "dots":true,
     "infinite": false
   }
@@ -214,13 +214,10 @@ export class ApplayoutComponent implements OnInit {
     });
   }
 
-  next(){
-  
-  }
-
-  prev(){
-
-  }
+  public changePage(delta: number): void {
+    // some checks
+    this.currentPage += delta;
+}
 
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
