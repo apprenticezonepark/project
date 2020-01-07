@@ -113,17 +113,41 @@
     </div> -->
     <div class="continer" style="z-index: 1; margin-top: 40px;">
         <span style="margin-left: 100px; font-size: 25px; color: #555;">สินค้าแนะนำ</span>
-        <div class="row" style="position: absolute; z-index: 10;">
-            <div class="col d-flex">
-                <a href="#" class="next round" style="color: #c49d45;"><i class="fas fa-angle-left fa-2x"></i></a>
-                <a href="#" class="previous round" style="color: #c49d45;"><i class="fas fa-angle-right fa-2x"></i></a>
+        <div style="margin-left: 120px; margin-right: 140px;">
+            <div class="row">
+                <div class="col-md-12 p-relative" style="z-index: 10;">
+                    <div class="d-flex v-center h-center"
+                        style="position: absolute; width: 50px; top: 0; left: 0; height: 100%;  padding-top: 100px;">
+                        <div class="p-2 mr-auto">
+                            <a class="next round" style="color: #c49d45;" (click)="prev()">
+                                <i class="fas fa-angle-left fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="d-flex v-center h-center"
+                        style="position: absolute; width: 50px; top: 0; right: 0; height: 100%;  padding-top: 100px;">
+                        <div class="p-2">
+                            <a class="previous round" style="color: #c49d45;" (click)="next()"><i
+                                    class="fas fa-angle-right fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- <div style="position: absolute; z-index: 10;">
+            <div class="d-flex">
+                <div class="p-2 mr-auto" style="margin-left: 100px;">
+                    <a href="#" class="next round" style="color: #c49d45;">
+                        <i class="fas fa-angle-left fa-2x"></i></a>
+                </div>
+                <div class="p-2">
+                    <a href="#" class="previous round" style="color: #c49d45;"><i
+                            class="fas fa-angle-right fa-2x"></i></a></div>
+            </div>
+        </div> -->
         <div style="margin-top: 20px; margin-left: 140px; margin-right: 140px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-
                 <div ngxSlickItem *ngFor="let data of itemList" class="slide" style="padding-right: 10px;">
                     <div class="card" style="width: auto; height: auto;">
                         <div class="pic-box">

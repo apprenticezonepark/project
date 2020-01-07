@@ -76,8 +76,8 @@ export class ApplayoutComponent implements OnInit {
   itemsConfig = {
     "slidesToShow": 5, 
     "slidesToScroll": 5,
-    "nextArrow":"<div class='nav-btn next-slide'></div>",
-    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    // "nextArrow":"<div class='nav-btn next-slide'></div>",
+    // "prevArrow":"<div class='nav-btn prev-slide'></div>",
     // "dots":true,
     "infinite": false
   }
@@ -184,6 +184,8 @@ export class ApplayoutComponent implements OnInit {
   vdo_id: any;
   itemList: any;
 
+  public currentPage = 0;
+
   constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice, private config_sv: config_service) {
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
@@ -210,6 +212,14 @@ export class ApplayoutComponent implements OnInit {
     .then((data) => {
       console.log(data)
     });
+  }
+
+  next(){
+  
+  }
+
+  prev(){
+
   }
 
   showvdo(dd) {
