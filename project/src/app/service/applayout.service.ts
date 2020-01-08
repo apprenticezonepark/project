@@ -1,16 +1,16 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { config_service } from './config_service';
+import { environment } from 'src/environments/environment';
 
 
 
 @Injectable()
 export class appservice {
-    constructor(private http: HttpClient,  private config_sv: config_service ) {
+    constructor(private http: HttpClient) {
     }
 
     private extAuthorizationHeader(): any {
-        return { headers: new HttpHeaders().set('Authorization', this.config_sv.ExternalToken) };
+        return { headers: new HttpHeaders().set('Authorization', environment.ExternalToken) };
     }
 
     // getitemall(): Promise<any> {
@@ -33,7 +33,7 @@ export class appservice {
         let _rc_doc_type = "100123";
         let _page = "1";
         let _page_size = "20";
-        return this.http.get(this.config_sv.config_api+ '/mkp/product/recommend/list/100123/1/3/2',
+        return this.http.get(environment.config_api+ '/mkp/product/recommend/list/100123/1/3/2',
         Object.assign({
             params: new HttpParams({
                 fromObject: {
@@ -51,7 +51,7 @@ export class appservice {
         let sc_type: '100123';
         let products_page: '10';
 
-        return this.http.get(this.config_sv.config_api+ '/mkp/product/bestseller/1/3/2',
+        return this.http.get(environment.config_api+ '/mkp/product/bestseller/1/3/2',
         Object.assign({
             params: new HttpParams({
                 fromObject: {
@@ -72,7 +72,7 @@ export class appservice {
         _param.set("sc_doc_id", _sc_id);
         _param.set("sc_doc_type", _sc_type);
         _param.set("products_perpage", _products_page);
-        return this.http.get(this.config_sv.config_api+ '/mkp/product/bestseller/1/3/2',
+        return this.http.get(environment.config_api+ '/mkp/product/bestseller/1/3/2',
             Object.assign({
                 params: new HttpParams({
                     fromObject: {

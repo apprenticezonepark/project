@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  config_api: "https://api.uat.afarmmart.com/pos/v1",
+  config_hp:  "http://10.0.130.101:8080/dev/trainee/spserv/v1/",
+  ExternalToken: 'Bearer JnqAOGQ99dypVjE',
+  config_pic: "https://static.uat.afarmmart.com/image/"
 };
 
 /*

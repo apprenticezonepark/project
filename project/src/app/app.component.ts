@@ -552,43 +552,21 @@ export class AppComponent {
     //หยุดการแพร่กระจายเหตุการณ์ของเมาส์
     event.stopPropagation();
 
-    // if (isg == undefined) {
-    //   console.log("ig = " + ig);
-    // } else if (isg != undefined) {
-    //   console.log("ig = " + ig);
-    //   console.log("isg = " + isg);
-    // }
+   
   }
 
   nextpage(id, id_code) {
-    // console.log(ic);
-
-    // for (i = 0; i < this.data_te.length; i++) {
-    //   if (ic == this.data_te[i].ic_id) {
-    //     nt_ic_code = this.data_te[i].ic_code;
-    //   }
-    // }
-
-    // if (isg != undefined || isg != null) {
-    //   this.router.navigate(["nextpage/" + ic + "/" + ig + "/" + isg]);
-    // } else if (ig != undefined || ig != null) {
-    //   this.router.navigate(["nextpage/" + ic + "/" + ig]);
-    // } else if (ic != "") {
-    //   this.router.navigate(["nextpage/" + ic], {
-    //     queryParams: { ic_code: nt_ic_code }
-    //   });
-    // }
-    // else {
+  
     if (id_code == "homepage") {
       this.router.navigate([""]);
     } else if (id_code == "") {
-      this.router.navigate(["nextpage/" + id]);
+      this.router.navigate(["category/" + id]);
     } else if (id_code == "ig_id") {
-      this.router.navigate(["nextpage/" + id], {
+      this.router.navigate(["category/" + id], {
         queryParams: { ig_id: id }
       });
     } else if (id_code == "isg_id") {
-      this.router.navigate(["nextpage/" + id], {
+      this.router.navigate(["category/" + id], {
         queryParams: { isg_id: id }
       });
     }

@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "nextpage/:id",
+    path: "category/:id",
     component: NextpageComponent
   },
   {

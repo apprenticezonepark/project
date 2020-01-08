@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-12  d-flex align-items-center mt-2">
           <div class="ml-2 mr-3"><img src="/assets/img/afarm_logo.png" (click)="active_menu('','homepage','')" alt="logo"
-              width="120px"></div>
+              width="120px" style="cursor: pointer;"></div>
           <div style="width: 100%;">
             <input class="form-control text_form" style="padding-left: 35px" type="text" name="sch" id="sch"
               placeholder="ค้นหาสินค้า">
@@ -42,9 +42,9 @@
         <div class="col-12">
           <div class="nav">
             <ul class="row  a_menu">
-              <li><a class="btn active" (click)="active_menu('','homepage','')" id="homepage">หน้าหลัก</a></li>
+              <li><a class="btn active" (click)="active_menu('','homepage','')" id="homepage" style="cursor: pointer;">หน้าหลัก</a></li>
               <li *ngFor="let data of data_te ;"><a class="btn" (click)="active_menu(data.ic_id,'',data.ic_id)"
-                  id="nextpage/{{data.ic_id}}">{{data.ic_name}}</a>
+                  id="nextpage/{{data.ic_id}}" style="cursor: pointer;">{{data.ic_name}}</a>
 
               <!--ทำ groups -->
               <!-- <ul> -->
