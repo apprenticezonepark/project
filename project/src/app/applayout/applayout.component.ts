@@ -79,7 +79,7 @@ export class ApplayoutComponent implements OnInit {
     // "nextArrow":"<div class='nav-btn next-slide'></div>",
     // "prevArrow":"<div class='nav-btn prev-slide'></div>",
     // "dots":true,
-    "infinite": false
+    "infinite": true
   }
   item = [
     {
@@ -109,7 +109,7 @@ export class ApplayoutComponent implements OnInit {
     // "nextArrow":"<div class='nav-btn next-slide'></div>",
     // "prevArrow":"<div class='nav-btn prev-slide'></div>",
     "dots":true,
-    "infinite": false
+    "infinite": true
   }
   itemall = [
     {
