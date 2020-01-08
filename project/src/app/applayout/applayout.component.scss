@@ -129,3 +129,19 @@ a:hover {
 .round {
   border-radius: 50%;
 }
+
+.slick-next {
+  right: -25px;
+  color: black;
+  background-color: black;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  color: black;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

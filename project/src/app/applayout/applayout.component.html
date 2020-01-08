@@ -113,29 +113,29 @@
     </div> -->
     <div class="container" style="z-index: 1; margin-top: 40px;">
         <span style="font-size: 25px; color: #555;">สินค้าแนะนำ</span>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12 p-relative" style="z-index: 10;">
                 <div class="d-flex v-center h-center"
                     style="position: absolute; width: 50px; top: 0; left: 0; height: 100%;  padding-top: 100px;">
                     <div class="mr-auto">
-                        <a type="button" class="next round" style="color: #c49d45;" (click)="changePage(-1)">
+                        <a type="button" class="next round" style="color: #c49d45;">
                             <i class="fas fa-angle-left fa-2x"></i></a>
                     </div>
                 </div>
                 <div class="d-flex v-center h-center"
                     style="position: absolute; width: 50px; top: 0; right: 0; height: 100%;  padding-top: 100px;">
                     <div>
-                        <a type="button" class="previous round" style="color: #c49d45;" (click)="changePage(1)"><i
-                                class="fas fa-angle-right fa-2x"></i></a>
+                        <a type="button" class="previous round" style="color: #c49d45;">
+                            <i class="fas fa-angle-right fa-2x"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div style="margin-top: 20px;">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-                <div ngxSlickItem *ngFor="let data of itemList" class="slide" style="padding-right: 10px;">
+                <div ngxSlickItem *ngFor="let data of itemList" class="slide" style="padding-right: 5px;">
                     <div class="card" style="width: auto; height: auto;">
                         <div class="pic-box">
                             <div class="fill-dock d-flex v-center h-center"

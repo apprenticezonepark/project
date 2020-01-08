@@ -76,8 +76,8 @@ export class ApplayoutComponent implements OnInit {
   itemsConfig = {
     "slidesToShow": 5, 
     "slidesToScroll": 5,
-    "nextArrow":"<div class='nav-btn next-slide'></div>",
-    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    // "nextArrow":"<div class='nav-btn next-slide'></div>",
+    // "prevArrow":"<div class='nav-btn prev-slide'></div>",
     // "dots":true,
     "infinite": false
   }
@@ -106,8 +106,8 @@ export class ApplayoutComponent implements OnInit {
   itemConfig = {
     "slidesToShow": 2, 
     "slidesToScroll": 1,
-    "nextArrow":"<div class='nav-btn next-slide'></div>",
-    "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    // "nextArrow":"<div class='nav-btn next-slide'></div>",
+    // "prevArrow":"<div class='nav-btn prev-slide'></div>",
     "dots":true,
     "infinite": false
   }
@@ -197,6 +197,7 @@ export class ApplayoutComponent implements OnInit {
     .then((data) => {
       console.log(data);
       this.itemList = data.Data.item_list;
+      // this.currentPage = data.Data.item_list;
     });
 
     // this.app_sv.getBestSeller().then((data) => {
@@ -214,7 +215,7 @@ export class ApplayoutComponent implements OnInit {
     });
   }
 
-  public changePage(delta: number): void {
+  changePage(delta: number): void {
     // some checks
     this.currentPage += delta;
 }
@@ -237,5 +238,9 @@ export class ApplayoutComponent implements OnInit {
   
   beforeChange(e) {
     // console.log('beforeChange');
+  }
+
+  pageitem(){
+    
   }
 }

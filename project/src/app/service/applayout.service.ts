@@ -13,21 +13,21 @@ export class appservice {
         return { headers: new HttpHeaders().set('Authorization', this.config_sv.ExternalToken) };
     }
 
-    getitemall(): Promise<any> {
-        return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page=0&page_size=4&langid=2').toPromise();
-    }
+    // getitemall(): Promise<any> {
+    //     return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page=0&page_size=4&langid=2').toPromise();
+    // }
 
-    getpage(pageitem): Promise<any> {
-        return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page='+pageitem+'&page_size=4&langid=2').toPromise();
-    }
+    // getpage(pageitem): Promise<any> {
+    //     return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page='+pageitem+'&page_size=4&langid=2').toPromise();
+    // }
 
-    getitemall2(): Promise<any> {
-        return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page=0&page_size=2&langid=2').toPromise();
-    }
+    // getitemall2(): Promise<any> {
+    //     return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page=0&page_size=2&langid=2').toPromise();
+    // }
 
-    getpage2(page): Promise<any> {
-        return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page='+page+'&page_size=2&langid=2').toPromise();
-    }
+    // getpage2(page): Promise<any> {
+    //     return this.http.get(this.config_sv.config_hp + 'hp/utilty/getselect_item?item_name=น&current_page='+page+'&page_size=2&langid=2').toPromise();
+    // }
 
     getreco() : Promise<any> {
         let _rc_doc_type = "100123";
@@ -44,7 +44,7 @@ export class appservice {
             }) 
         }) 
         ).toPromise();
-    } 
+    }
 
     getBestSeller(): Promise<any> {
         let sc_id: '103';
