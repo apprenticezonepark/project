@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { appservice } from '../service/applayout.service';
@@ -10,6 +10,9 @@ import { config_service } from '../service/config_service';
   styleUrls: ['./applayout.component.scss']
 })
 export class ApplayoutComponent implements OnInit {
+
+  isLoading: boolean;
+  @Input() loader:string='https://media.tenor.com/images/f864cbf3ea7916572605edd3b3fe637f/tenor.gif';
 
   title = 'ngSlick';
   slideConfig = {
@@ -184,9 +187,8 @@ export class ApplayoutComponent implements OnInit {
   vdo_id: any;
   itemList: any;
 
-  public currentPage = 0;
-
   constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice, private config_sv: config_service) {
+    this.isLoading = true;
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
   }
@@ -215,11 +217,6 @@ export class ApplayoutComponent implements OnInit {
     });
   }
 
-  changePage(delta: number): void {
-    // some checks
-    this.currentPage += delta;
-}
-
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
   }
@@ -240,7 +237,8 @@ export class ApplayoutComponent implements OnInit {
     // console.log('beforeChange');
   }
 
-  pageitem(){
-    
+  loading(i){
+    document.getElementById("a"+i).style.display = "none";
+    document.getElementById("img"+i).style.display="block";
   }
 }

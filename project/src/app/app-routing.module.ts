@@ -26,6 +26,10 @@ const routes: Routes = [
     component: ProductComponent
   },
   {
+    path: "product/:productID",
+    component: ProductComponent
+  },
+  {
     path: "**",
     component: FilenotfoundComponent
   }

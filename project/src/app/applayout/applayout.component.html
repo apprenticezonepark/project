@@ -6,7 +6,7 @@
             <div ngxSlickItem class="slide">
                 <img src="./assets/main_newyear.jpg" alt="" width="100%">
             </div>
-            <div ngxSlickItem class="slide">   
+            <div ngxSlickItem class="slide">
                 <img src="./assets/main_header.jpg" alt="" width="100%">
                 <div class="carousel-caption" style="text-align: start; z-index: 1;">
                     <div style="font-size: 40px;">A Farm Mart</div>
@@ -23,7 +23,7 @@
                     </div>
                     <button class="btn btn-province">ของดี 77 จังหวัด</button>
                     <button class="btn btn-item" style="margin-left: 20px;">สินค้าตามภูมิภาค</button>
-                </div>   
+                </div>
             </div>
         </ngx-slick-carousel>
     </div>
@@ -117,16 +117,18 @@
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="itemsConfig"
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
-                <div ngxSlickItem *ngFor="let data of itemList" class="slide" style="padding-right: 10px;">
-                    <div class="card" style="width: auto; height: auto;">
+                <div ngxSlickItem *ngFor="let data of itemList; index as i" class="slide" style="padding-right: 10px;">
+                    <div class="card" style="width: auto; height: auto;" routerLink="/product/{{data.item_id}}">
                         <div class="pic-box">
                             <div class="fill-dock d-flex v-center h-center"
-                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden;">
-                                <img class="card-img-top mw-100 mh-100 placeholder" *ngIf="data.item_pic_path != null"
+                                style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden; justify-content: center;">
+                                <span style="align-self: center;"><i class="fa fa-spinner fa-spin"
+                                        id="a{{i}}"></i></span>
+                                <img class="card-img-top mw-100 mh-100 placeholder" style="display: none;"
+                                    *ngIf="data.item_pic_path != null" id="img{{i}}"
                                     src="{{config_sv.config_pic}}{{data.item_pic_path.content_path}}" alt="..."
-                                    onerror="this.onerror=null;this.src='/assets/muanjai.png'">
-                                <img class="card-img-top mw-100 mh-100 placeholder" *ngIf="data.item_pic_path == null"
-                                    src="./assets/muanjai.png" alt="...">
+                                    onerror="this.onerror=null;this.src='/assets/muanjai.png'" (load)="loading(i)"
+                                    (error)="loading(i)">
                             </div>
                         </div>
                         <div class="card-body p-3">
