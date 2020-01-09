@@ -199,7 +199,6 @@ export class ApplayoutComponent implements OnInit {
     .then((data) => {
       console.log(data);
       this.itemList = data.Data.item_list;
-      // this.currentPage = data.Data.item_list;
     });
 
     // this.app_sv.getBestSeller().then((data) => {
