@@ -21,7 +21,7 @@ export class ApplayoutComponent implements OnInit {
     "slidesToScroll": 1,
     "nextArrow":"<div class='nav-btn next-slide'></div>",
     "prevArrow":"<div class='nav-btn prev-slide'></div>",
-    "dots":true,
+    // "dots":true,
     "infinite": false
   };
   items = [
