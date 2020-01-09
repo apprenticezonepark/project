@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
     this.nb_pic = 0;
     this.show_des = 1;
 
-    this.app_sv.getreco().then(data => {
+    this.app_sv.getitemmore().then(data => {
       console.log(data);
       this.itemList = data.Data.item_list;
     });

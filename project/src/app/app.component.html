@@ -49,11 +49,11 @@
               <!--ทำ groups -->
               <!-- <ul> -->
               <ul *ngIf="data.groups !=null || data.groups != undefined " >
-                <li *ngFor="let datagroups of data.groups ;" (click)="active_menu(datagroups.ig_id,'ig_id',data.ic_id)">
-                  <div class="d-flex align-items-center">
+                <li *ngFor="let datagroups of data.groups ;" class="d-flex align-items-center" (click)="active_menu(datagroups.ig_id,'ig_id',data.ic_id)">
+                  <div style="width: -webkit-fill-available;">
                     <a >{{datagroups.ig_name}}</a>
-                    <i class="fas fa-chevron-right" style="margin-left: auto; font-size: 15px;"></i>
                   </div>
+                  <span ><i class="fas fa-chevron-right ml-auto" style=" font-size: 15px;"></i></span>
                   <ul *ngIf="datagroups.sub_groups !=null || datagroups.sub_groups != undefined " >
                     <li *ngFor="let datasub_groups of datagroups.sub_groups ;" (click)="active_menu(datasub_groups.isg_id,'isg_id',data.ic_id)">
                       <div class="d-flex align-items-center">
@@ -76,7 +76,7 @@
     <router-outlet></router-outlet>
   </div>
 
-  <div style="background-color: blanchedalmond; padding-bottom: 2rem;margin-top: 2rem;">
+  <div style="background-color: rgb(254, 255, 244); padding-bottom: 2rem;margin-top: 2rem;">
     <div class="container text-center">
       <div class="row f_footer mb-3 pt-5">
         <span class="mr-3" style="color: rgb(201, 150, 57);">ติดตามข่าวสารจาก</span>
@@ -89,8 +89,8 @@
       <div class="d-flex pb-3"
         style="position: relative; max-width: 400px; margin: auto;padding-bottom: 0px !important;">
         <input autocomplete="off" class="form-control text_form" placeholder="ระบุ e-mail เพื่อรับข่าวสาร"
-          style="border: solid .1rem rgb(119, 67, 0);" type="email">
-        <a href="#" class="text-white d-flex search" style="background-color: rgb(119, 67, 0)">ส่ง </a>
+          style="border: solid .1rem #C49D45" type="email">
+        <a href="#" class="text-white d-flex search" style="background-color: #C49D45">ส่ง </a>
       </div>
     </div>
   </div>

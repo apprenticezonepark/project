@@ -46,6 +46,23 @@ export class appservice {
         ).toPromise();
     }
 
+    getitemmore() : Promise<any> {
+        let _rc_doc_type = "100123";
+        let _page = "1";
+        let _page_size = "5";
+        return this.http.get(environment.config_api+ '/mkp/product/recommend/list/100123/1/3/2',
+        Object.assign({
+            params: new HttpParams({
+                fromObject: {
+                    rc_doc_type: _rc_doc_type,
+                    current_page: _page,
+                    page_size: _page_size
+                }
+            }) 
+        }) 
+        ).toPromise();
+    }
+
     getBestSeller(): Promise<any> {
         let sc_id: '103';
         let sc_type: '100123';
