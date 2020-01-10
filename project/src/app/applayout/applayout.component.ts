@@ -84,6 +84,14 @@ export class ApplayoutComponent implements OnInit {
     // "dots":true,
     "infinite": true
   }
+  itemsdataConfig = {
+    "slidesToShow": 5, 
+    "slidesToScroll": 5,
+    // "nextArrow":"<div class='nav-btn next-slide'></div>",
+    // "prevArrow":"<div class='nav-btn prev-slide'></div>",
+    // "dots":true,
+    "infinite": true
+  }
   item = [
     {
       category: 'ผลิตภัณฑ์ชุมชน',
@@ -186,6 +194,7 @@ export class ApplayoutComponent implements OnInit {
   ];
   vdo_id: any;
   itemList: any;
+  itemdata: any;
 
   constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice, private config_sv: config_service) {
     this.isLoading = true;
@@ -207,6 +216,7 @@ export class ApplayoutComponent implements OnInit {
     this.app_sv.FindByBestseller()
     .then((data) => {
       console.log(data)
+      this.itemdata = data.Data;
     });
 
   }
