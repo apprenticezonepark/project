@@ -570,7 +570,5 @@ export class AppComponent {
         queryParams: { isg_id: id }
       });
     }
-
-    // }
   }
 }

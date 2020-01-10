@@ -42,7 +42,7 @@
                                         id="a{{i}}"></i></span>
                                 <img class="card-img-top mw-100 mh-100 placeholder" style="display: none;"
                                     *ngIf="data.item_pic_path != null" id="img{{i}}"
-                                    src="{{config_sv.config_pic}}{{data.item_pic_path.content_path}}" alt="..."
+                                    src="{{config_pic}}{{data.item_pic_path.content_path}}" alt="..."
                                     onerror="this.onerror=null;this.src='/assets/muanjai.png'" (load)="loading(i)"
                                     (error)="loading(i)">
                             </div>
@@ -127,7 +127,7 @@
                 (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)"
                 (beforeChange)="beforeChange($event)">
                 <div ngxSlickItem *ngFor="let data of itemList; index as i" class="slide" style="padding-right: 10px;">
-                    <div class="card" style="width: auto; height: auto;" routerLink="/product/{{data.item_id}}">
+                    <div class="card" style="width: auto; height: auto;" >
                         <div class="pic-box">
                             <div class="fill-dock d-flex v-center h-center"
                                 style="border-top-left-radius: 5px; border-top-right-radius: 5px; overflow: hidden; justify-content: center;">
@@ -135,7 +135,7 @@
                                         id="a{{i}}"></i></span>
                                 <img class="card-img-top mw-100 mh-100 placeholder" style="display: none;"
                                     *ngIf="data.item_pic_path != null" id="img{{i}}"
-                                    src="{{config_sv.config_pic}}{{data.item_pic_path.content_path}}" alt="..."
+                                    src="{{config_pic}}{{data.item_pic_path.content_path}}" alt="..."
                                     onerror="this.onerror=null;this.src='/assets/muanjai.png'" (load)="loading(i)"
                                     (error)="loading(i)">
                             </div>

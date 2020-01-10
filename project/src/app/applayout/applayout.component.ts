@@ -3,6 +3,9 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { appservice } from '../service/applayout.service';
 import { config_service } from '../service/config_service';
+import { Router } from "@angular/router";
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-applayout',
@@ -13,7 +16,6 @@ export class ApplayoutComponent implements OnInit {
 
   isLoading: boolean;
   @Input() loader:string='https://media.tenor.com/images/f864cbf3ea7916572605edd3b3fe637f/tenor.gif';
-
   title = 'ngSlick';
   slideConfig = {
     autoplay: 3000,
@@ -24,6 +26,7 @@ export class ApplayoutComponent implements OnInit {
     // "dots":true,
     "infinite": false
   };
+  config_pic = environment.config_pic;
   items = [
     {
       category: 'ผลิตภัณฑ์ชุมชน',
@@ -196,7 +199,7 @@ export class ApplayoutComponent implements OnInit {
   itemList: any;
   itemdata: any;
 
-  constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice, private config_sv: config_service) {
+  constructor(private dom: DomSanitizer, private http: HttpClient, private app_sv: appservice,private router :Router) {
     this.isLoading = true;
     this.url = dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[0]);
     this.vdo_id = 0;
@@ -246,4 +249,11 @@ export class ApplayoutComponent implements OnInit {
     document.getElementById("a"+i).style.display = "none";
     document.getElementById("img"+i).style.display="block";
   }
+
+  nextpage(id) {
+
+      this.router.navigate(["product/" + id]);
+   
+  }
+
 }

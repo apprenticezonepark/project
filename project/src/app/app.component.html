@@ -57,7 +57,7 @@
                   <ul *ngIf="datagroups.sub_groups !=null || datagroups.sub_groups != undefined " >
                     <li *ngFor="let datasub_groups of datagroups.sub_groups ;" (click)="active_menu(datasub_groups.isg_id,'isg_id',data.ic_id)">
                       <div class="d-flex align-items-center">
-                        <a class="tn">{{datasub_groups.isg_name}}</a>
+                        <a style="padding-bottom : 2px;" class="tn">{{datasub_groups.isg_name}}</a>
                       </div>
                     </li>
                   </ul>
