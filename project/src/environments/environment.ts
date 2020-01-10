@@ -18,3 +18,25 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+export const Config = {
+  AppName: 'AFarmMart',
+  WSPID: 1,
+  SysID: 3,
+  SCDocType: {
+      AFarmmart: 100123, // Sales Channel A-farmmart
+  },
+  DocType: 100123,
+  // SCDocType: 600130,
+  OutletID: 16,
+  SCDocID: 103,
+  PageSize: 24,
+  
+  ServiceUrl: {
+      Local: 'http://127.0.0.1:50085/uat/tabco/mkrplaceserv/v1',
+
+      Public: 'https://api.uat.afarmmart.com/mkrplace/v1' // UAT
+  },
+  ExternalServiceUrl: 'https://api.uat.afarmmart.com/pos/v1',
+
+};

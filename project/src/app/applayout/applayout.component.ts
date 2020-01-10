@@ -111,7 +111,7 @@ export class ApplayoutComponent implements OnInit {
     "slidesToScroll": 1,
     // "nextArrow":"<div class='nav-btn next-slide'></div>",
     // "prevArrow":"<div class='nav-btn prev-slide'></div>",
-    "dots":true,
+    // "dots":true,
     "infinite": true
   }
   itemall = [
@@ -204,18 +204,14 @@ export class ApplayoutComponent implements OnInit {
     // this.app_sv.getBestSeller().then((data) => {
     //   console.log(data)
     // });
-
-    // this.getBestseller();
-
-  }
-
-  getBestseller() {
     this.app_sv.FindByBestseller()
     .then((data) => {
       console.log(data)
     });
+
   }
 
+  
   showvdo(dd) {
     this.url = this.dom.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.video[dd]);
   }
